@@ -2,6 +2,9 @@
 
 ### Wersja 2.6.1
 
+- **Pobranie statusu uwierzytelniania (GET `/auth/{referenceNumber})`**  
+  Ujednolicono komunikaty w polu details dla statusu `450` ("Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu") - treści są teraz zwracane w języku polskim, zgodnie z dokumentacją. Dodatkowo uzupełniono dokumentację o kilka wariantów details, które występowały w odpowiedziach API, ale nie były wcześniej opisane.
+
 - **OpenAPI**  
   Zaktualizowano odnośniki do dokumentacji: CIRFMF/ksef-docs -> CIRFMF/ksef-api.
 
