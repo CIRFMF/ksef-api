@@ -5,6 +5,9 @@
 - **Pobranie statusu uwierzytelniania (GET `/auth/{referenceNumber})`**  
   Ujednolicono komunikaty w polu details dla statusu `450` ("Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu") - treści są teraz zwracane w języku polskim, zgodnie z dokumentacją. Dodatkowo uzupełniono dokumentację o kilka wariantów details, które występowały w odpowiedziach API, ale nie były wcześniej opisane.
 
+- **Eksport paczki faktur (POST `/invoices/exports`)**  
+  Poprawiono dzielenie paczek w trybie `onlyMetadata=true` dla eksportów obejmujących powyżej 10 000 faktur - wcześniej `_metadata.json` mógł zawierać 10 001 rekordów w jednej paczce, a `isTruncated` pozostawało ustawione na `false`. Paczki są dzielone poprawnie, a wartość `isTruncated` odzwierciedla rzeczywisty stan wyniku.
+
 - **OpenAPI**  
   Zaktualizowano odnośniki do dokumentacji: CIRFMF/ksef-docs -> CIRFMF/ksef-api.
 
