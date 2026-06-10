@@ -1,5 +1,10 @@
 ## Zmiany w API 2.0
 
+### Wersja 2.6.1
+
+- **OpenAPI**  
+  Zaktualizowano odnośniki do dokumentacji: CIRFMF/ksef-docs -> CIRFMF/ksef-api.
+
 ### Wersja 2.6.0
 | Środowisko | Data wdrożenia |
 | ---------- | -------------: |

@@ -43,7 +43,7 @@ Biblioteka KSeF 2.0 Client będzie dostępna w oficjalnych repozytoriach pakiet�
 
 * **Przewodnik integracyjny / tutorial:**  
   Praktyczne instrukcje krok po kroku wraz z fragmentami kodu ilustrujące sposób korzystania z kluczowych endpointów systemu.
-  <br/>\[[link](https://github.com/CIRFMF/ksef-docs)\]
+  <br/>\[[link](https://github.com/CIRFMF/ksef-api)\]
 
 # Kluczowe zmiany w API 2.0
 
@@ -63,7 +63,7 @@ Korzyści:
 * możliwość wielokrotnego użycia tokena do tworzenia wielu sesji,  
 * **obsługa odświeżania i unieważniania tokenów**.
 
-Szczegóły procesu uwierzytelniania: \[[link](https://github.com/CIRFMF/ksef-docs/blob/main/uwierzytelnianie.md)\]
+Szczegóły procesu uwierzytelniania: \[[link](/uwierzytelnianie.md)\]
 
 ## Ujednolicony proces inicjalizacji dla sesji wsadowej i interaktywnej
 
@@ -78,8 +78,8 @@ W obu przypadkach przekazywany jest prosty JSON zawierający:
 W przypadku wysyłki wsadowej przekazywana jest również lista cząstkowych plików wraz z metadanymi wchodzących w skład paczki.
 
 Szczegóły i przykłady użycia: 
-* wysyłka interaktywna \[[link](https://github.com/CIRFMF/ksef-docs/blob/main/sesja-interaktywna.md)\]
-* wysyłka wsadowa \[[link](https://github.com/CIRFMF/ksef-docs/blob/main/sesja-wsadowa.md)\]
+* wysyłka interaktywna \[[link](/sesja-interaktywna.md)\]
+* wysyłka wsadowa \[[link](/sesja-wsadowa.md)\]
 
 ## Obowiązkowe szyfrowanie wszystkich faktur
 
