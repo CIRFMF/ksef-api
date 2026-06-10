@@ -1,6 +1,11 @@
 ## Zmiany w API 2.0
 
 ### Wersja 2.6.1
+| Środowisko | Data wdrożenia |
+| ---------- | -------------: |
+| **TEST**   |     10.06.2026 |
+| **DEMO**   |     11.06.2026 |
+| **PRD**    |     16.06.2026 |
 
 - **Pobranie statusu uwierzytelniania (GET `/auth/{referenceNumber})`**  
   Ujednolicono komunikaty w polu details dla statusu `450` ("Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu") - treści są teraz zwracane w języku polskim, zgodnie z dokumentacją. Dodatkowo uzupełniono dokumentację o kilka wariantów details, które występowały w odpowiedziach API, ale nie były wcześniej opisane.
