@@ -1,5 +1,15 @@
 ## Zmiany w API 2.0
 
+### Wersja 2.7.0
+| Środowisko | Data wdrożenia |
+| ---------- | -------------: |
+| **TEST**   |     21.07.2027 |
+| **DEMO**   |     - |
+| **PRD**    |     - |
+
+- **OpenAPI**  
+  Ujednolicono opisy wymaganych uprawnień: gdy wystarczy posiadanie jednego z kilku uprawnień, zastosowano sformułowanie „Wymagane jedno z uprawnień”, a w przypadku pojedynczego uprawnienia — „Wymagane uprawnienie”. Zmiana ma charakter dokumentacyjny; zachowanie API pozostaje bez zmian.
+
 ### Wersja 2.6.1
 | Środowisko | Data wdrożenia |
 | ---------- | -------------: |
