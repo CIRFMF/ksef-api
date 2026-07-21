@@ -7,6 +7,9 @@
 | **DEMO**   |     - |
 | **PRD**    |     - |
 
+- **Dane testowe**  
+  Dodano endpoint PUT `/testdata/certificates/{serialNumber}` umożliwiający skrócenie okresu ważności certyfikatu KSeF poprzez zmianę `validTo`, na potrzeby symulowania scenariuszy wygaśnięcia certyfikatu na środowiskach testowych.
+
 - **OpenAPI**  
   Ujednolicono opisy wymaganych uprawnień: gdy wystarczy posiadanie jednego z kilku uprawnień, zastosowano sformułowanie „Wymagane jedno z uprawnień”, a w przypadku pojedynczego uprawnienia — „Wymagane uprawnienie”. Zmiana ma charakter dokumentacyjny; zachowanie API pozostaje bez zmian.
 

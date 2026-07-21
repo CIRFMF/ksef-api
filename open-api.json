@@ -1225,6 +1225,126 @@
         ]
       }
     },
+    "/testdata/certificates/{serialNumber}": {
+      "put": {
+        "tags": [
+          "Certyfikaty"
+        ],
+        "summary": "Aktualizacja certyfikatu",
+        "description": "Aktualizuje dane wskazanego certyfikatu KSeF uwierzytelnionego podmiotu. **Tylko na środowiskach testowych.**\n\n**Headers:**\n\n`X-Error-Format: problem-details` - ustawienie tego nagłówka powoduje zwracanie błędów w formacie **Problem Details** (`application/problem+json`).",
+        "parameters": [
+          {
+            "name": "serialNumber",
+            "in": "path",
+            "description": "Numer seryjny certyfikatu (w formacie szesnastkowym).",
+            "required": true,
+            "schema": {
+              "maxLength": 16,
+              "minLength": 16,
+              "pattern": "^[0-9A-F]{16}$",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "validTo"
+                ],
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/TestDataUpdateCertificateRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-System-Warning": {
+                "schema": {
+                  "$ref": "#/components/schemas/SystemWarning"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "| ExceptionCode       | ExceptionDescription                                       | Details |\n|---------------------|------------------------------------------------------------|---------|\n| 25008               | Certyfikat o podanym numerze seryjnym nie istnieje.        |         |\n| 21405 | Błąd walidacji danych wejściowych. | {treść błędu z walidatora} |",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestProblemDetails"
+                }
+              }
+            },
+            "x-summary": "Bad Request"
+          },
+          "429": {
+            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "headers": {
+              "Retry-After": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetryAfter"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsProblemDetails"
+                }
+              }
+            },
+            "x-summary": "Too Many Requests"
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ],
+        "x-rate-limits": {
+          "perSecond": 10,
+          "perMinute": 30,
+          "perHour": 120
+        }
+      }
+    },
     "/security/public-key-certificates": {
       "get": {
         "tags": [
@@ -17595,6 +17715,19 @@
                 "$ref": "#/components/schemas/TestDataAuthorizedIdentifier"
               }
             ]
+          }
+        }
+      },
+      "TestDataUpdateCertificateRequest": {
+        "required": [
+          "validTo"
+        ],
+        "type": "object",
+        "properties": {
+          "validTo": {
+            "type": "string",
+            "description": "Nowa data ważności certyfikatu, nie może być późniejsza niż obecna.",
+            "format": "date-time"
           }
         }
       },
