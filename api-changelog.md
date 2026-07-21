@@ -7,6 +7,9 @@
 | **DEMO**   |     - |
 | **PRD**    |     - |
 
+- **Identyfikatory zbiorcze**  
+  Dodano obsługę identyfikatorów zbiorczych oraz nowe uprawnienie `CollectiveIdentifierManage`, wymagane do wykonywania operacji na IZ.
+
 - **Dane testowe**  
   Dodano endpoint PUT `/testdata/certificates/{serialNumber}` umożliwiający skrócenie okresu ważności certyfikatu KSeF poprzez zmianę `validTo`, na potrzeby symulowania scenariuszy wygaśnięcia certyfikatu na środowiskach testowych.
 
