@@ -2528,22 +2528,14 @@
         ]
       }
     },
-    "/collective-identifiers/{collectiveIdentifierNumber}/invoices": {
-      "get": {
+    "/collective-identifiers/invoices": {
+      "post": {
         "tags": [
           "Identyfikatory zbiorcze"
         ],
         "summary": "Pobranie listy faktur wchodzących w skład identyfikatora zbiorczego",
-        "description": "Zwraca listę numerów KSeF faktur wchodzących w skład identyfikatora zbiorczego.\n            \nInformacje o kwocie i walucie płatności są zwracane wyłącznie podmiotowi, który utworzył identyfikator zbiorczy, lub podmiotowi występującemu w roli na danej fakturze.\n\nJeżeli kwota i waluta płatności zostały określone podczas tworzenia identyfikatora zbiorczego, a podmiot nie ma dostępu do tych informacji, pola dotyczące kwoty i waluty płatności nie są zwracane, a pole <b>paymentDetailsHidden</b> przyjmuje wartość <b>true</b>.\n\nJeżeli kwota i waluta płatności nie zostały określone podczas tworzenia identyfikatora zbiorczego, ich wartości pozostają puste, a pole <b>paymentDetailsHidden</b> przyjmuje wartość <b>false</b>.\n\n**Headers:**\n\n`X-Error-Format: problem-details` - ustawienie tego nagłówka powoduje zwracanie błędów w formacie **Problem Details** (`application/problem+json`).\n\n**Sortowanie:**\n\n- ksefNumber (Desc)\n\n\n\n**Wymagane jedno z uprawnień**: `InvoiceRead`, `InvoiceWrite`, `CollectiveIdentifierManage`.",
+        "description": "Zwraca listę numerów KSeF faktur wchodzących w skład identyfikatora zbiorczego.\n            \nInformacje o kwocie i walucie płatności są zwracane wyłącznie podmiotowi, który utworzył identyfikator zbiorczy, lub podmiotowi występującemu w roli na danej fakturze.\n\nJeżeli kwota i waluta płatności zostały określone podczas tworzenia identyfikatora zbiorczego, a podmiot nie ma dostępu do tych informacji, pola dotyczące kwoty i waluty płatności nie są zwracane, a pole <b>detailsHidden</b> przyjmuje wartość <b>true</b>.\n\nJeżeli kwota i waluta płatności nie zostały określone podczas tworzenia identyfikatora zbiorczego, ich wartości pozostają puste, a pole <b>detailsHidden</b> przyjmuje wartość <b>false</b>.\n\n**Headers:**\n\n`X-Error-Format: problem-details` - ustawienie tego nagłówka powoduje zwracanie błędów w formacie **Problem Details** (`application/problem+json`).\n\n**Sortowanie:**\n\n- ksefNumber (Desc)\n\n\n\n**Wymagane jedno z uprawnień**: `InvoiceRead`, `InvoiceWrite`, `CollectiveIdentifierManage`.",
         "parameters": [
-          {
-            "name": "collectiveIdentifierNumber",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "x-continuation-token",
             "in": "header",
@@ -2556,7 +2548,7 @@
             "name": "pageSize",
             "in": "query",
             "schema": {
-              "maximum": 200,
+              "maximum": 500,
               "minimum": 10,
               "type": "integer",
               "format": "int32",
@@ -2564,6 +2556,22 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "collectiveIdentifierNumbers"
+                ],
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CollectiveIdentifierInvoicesQueryRequest"
+                  }
+                ]
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK",
@@ -2687,6 +2695,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CollectiveIdentifiersByKsefNumberQueryResponse"
+                },
+                "example": {
+                  "continuationToken": "eyJEYXRlQ3JlYXRlZCI6IjIwMjYtMDctMjBUMDE6MTM6MTMuMTYzOTQ3KzAwOjAwIiwiQ29sbGVjdGl2ZUlkZW50aWZpZXJOdW1iZXIiOiI4NjMxOTQxNTc4LUlaMjAyNjA3LTMyM0I1MjE4NDAwMC1DRCJ9",
+                  "collectiveIdentifiers": [
+                    {
+                      "collectiveIdentifierNumber": "1111111111-IZ202607-65ED02180000-E7",
+                      "createdInCurrentContext": false,
+                      "dateCreated": "2026-07-10T12:00:00+02:00"
+                    }
+                  ]
                 }
               }
             }
@@ -2706,6 +2724,29 @@
               }
             },
             "x-summary": "Bad Request"
+          },
+          "429": {
+            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 20 | 120 | 240 | collectiveIdentifier\n",
+            "headers": {
+              "Retry-After": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetryAfter"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsProblemDetails"
+                }
+              }
+            },
+            "x-summary": "Too Many Requests"
           },
           "403": {
             "description": "Forbidden",
@@ -2733,6 +2774,11 @@
             "Bearer": [ ]
           }
         ],
+        "x-rate-limits": {
+          "perSecond": 20,
+          "perMinute": 120,
+          "perHour": 240
+        },
         "x-sort": [
           {
             "field": "dateCreated",
@@ -11893,6 +11939,21 @@
           }
         }
       },
+      "CollectiveIdentifierInvoicesQueryRequest": {
+        "required": [
+          "collectiveIdentifierNumbers"
+        ],
+        "type": "object",
+        "properties": {
+          "collectiveIdentifierNumbers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Numery identyfikatorów zbiorczych. Maksymalna liczba to 10."
+          }
+        }
+      },
       "CollectiveIdentifierInvoicesQueryResponse": {
         "required": [
           "invoices"
@@ -11915,6 +11976,7 @@
       },
       "CollectiveIdentifierInvoicesQueryResponseItem": {
         "required": [
+          "collectiveIdentifierNumber",
           "detailsHidden",
           "ksefNumber"
         ],
@@ -11927,6 +11989,10 @@
               }
             ],
             "description": "Numer ksef faktury."
+          },
+          "collectiveIdentifierNumber": {
+            "type": "string",
+            "description": "Numer identyfikatora zbiorczego."
           },
           "payment": {
             "required": [

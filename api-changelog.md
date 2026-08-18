@@ -1,5 +1,8 @@
 ## Zmiany w API 2.0
 
+- **Identyfikatory zbiorcze**  
+  - Zmieniono endpoint GET `/collective-identifiers/{collectiveIdentifierNumber}/invoices` na POST /`collective-identifiers/invoices`. Metoda przyjmuje listę maksymalnie 10 identyfikatorów zbiorczych zamiast pojedynczego numeru. Odpowiedź rozszerzono o `collectiveIdentifierNumber`, zwiększono maksymalny `pageSize` z 200 do 500, objęto endpoint limitami API oraz dodano przykład odpowiedzi.
+
 ### Wersja 2.7.0
 | Środowisko | Data wdrożenia |
 | ---------- | -------------: |
