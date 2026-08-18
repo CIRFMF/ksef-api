@@ -3,6 +3,7 @@
 - **Identyfikatory zbiorcze**  
   - Zmieniono endpoint GET `/collective-identifiers/{collectiveIdentifierNumber}/invoices` na POST /`collective-identifiers/invoices`. Metoda przyjmuje listę maksymalnie 10 identyfikatorów zbiorczych zamiast pojedynczego numeru. Odpowiedź rozszerzono o `collectiveIdentifierNumber`, zwiększono maksymalny `pageSize` z 200 do 500, objęto endpoint limitami API oraz dodano przykład odpowiedzi.
   - Zwiększono limity API z `10/60/120` do `20/120/240` dla wszytkich endpointów z grupy `collectiveIdentifier`.
+  - Dodano przykłady odpowiedzi.
 
 ### Wersja 2.7.0
 | Środowisko | Data wdrożenia |

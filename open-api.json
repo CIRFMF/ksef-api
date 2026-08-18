@@ -2307,6 +2307,26 @@
                     "$ref": "#/components/schemas/GenerateCollectiveIdentifierRequest"
                   }
                 ]
+              },
+              "example": {
+                "invoices": [
+                  {
+                    "ksefNumber": "1111111111-20260612-6310EC800000-DA",
+                    "payment": {
+                      "amount": 100,
+                      "currency": "PLN"
+                    },
+                    "description": "Opis faktury 1"
+                  },
+                  {
+                    "ksefNumber": "1111111111-20260612-62EAFD400000-B3",
+                    "payment": {
+                      "amount": 45,
+                      "currency": "PLN"
+                    },
+                    "description": "Opis faktury 2"
+                  }
+                ]
               }
             }
           }
@@ -2325,6 +2345,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GenerateCollectiveIdentifierResponse"
+                },
+                "example": {
+                  "collectiveIdentifierNumber": "1111111111-IZ202607-65ED02180000-E7"
                 }
               }
             }
@@ -2447,6 +2470,13 @@
                     "$ref": "#/components/schemas/CollectiveIdentifiersQueryRequest"
                   }
                 ]
+              },
+              "example": {
+                "collectiveIdentifierNumber": "1111111111-IZ202607-65ED02180000-E7",
+                "dateCreatedFrom": "2026-07-10T12:00:00+02:00",
+                "dateCreatedTo": "2026-08-10T12:00:00+02:00",
+                "invoiceCountFrom": 10,
+                "invoiceCountTo": 100
               }
             }
           }
@@ -2465,6 +2495,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CollectiveIdentifiersQueryResponse"
+                },
+                "example": {
+                  "continuationToken": "eyJEYXRlQ3JlYXRlZCI6IjIwMjYtMDctMjBUMDE6MTM6MTMuMTYzOTQ3KzAwOjAwIiwiQ29sbGVjdGl2ZUlkZW50aWZpZXJOdW1iZXIiOiI4NjMxOTQxNTc4LUlaMjAyNjA3LTMyM0I1MjE4NDAwMC1DRCJ9",
+                  "collectiveIdentifiers": [
+                    {
+                      "collectiveIdentifierNumber": "1111111111-IZ202607-65ED02180000-E7",
+                      "dateCreated": "2026-07-10T12:00:00+02:00",
+                      "invoiceCount": 16,
+                      "createdInCurrentContext": true
+                    }
+                  ]
                 }
               }
             }
@@ -2614,6 +2655,29 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CollectiveIdentifierInvoicesQueryResponse"
+                },
+                "example": {
+                  "continuationToken": "eyJEYXRlQ3JlYXRlZCI6IjIwMjYtMDctMjBUMDE6MTM6MTMuMTYzOTQ3KzAwOjAwIiwiQ29sbGVjdGl2ZUlkZW50aWZpZXJOdW1iZXIiOiI4NjMxOTQxNTc4LUlaMjAyNjA3LTMyM0I1MjE4NDAwMC1DRCJ9",
+                  "invoices": [
+                    {
+                      "ksefNumber": "1111111111-20260612-6310EC800000-DA",
+                      "payment": {
+                        "amount": 100,
+                        "currency": "PLN"
+                      },
+                      "description": "Opis faktury 1",
+                      "detailsHidden": false
+                    },
+                    {
+                      "ksefNumber": "1111111111-20260612-62EAFD400000-B3",
+                      "payment": {
+                        "amount": 45,
+                        "currency": "PLN"
+                      },
+                      "description": "Opis faktury 2",
+                      "detailsHidden": false
+                    }
+                  ]
                 }
               }
             }
