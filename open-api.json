@@ -2346,7 +2346,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 60 | 120 | collectiveIdentifier\n",
+            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 20 | 120 | 240 | collectiveIdentifier\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -2395,9 +2395,9 @@
           }
         ],
         "x-rate-limits": {
-          "perSecond": 10,
-          "perMinute": 60,
-          "perHour": 120
+          "perSecond": 20,
+          "perMinute": 120,
+          "perHour": 240
         },
         "x-required-permissions": [
           "InvoiceRead",
@@ -2485,6 +2485,29 @@
             },
             "x-summary": "Bad Request"
           },
+          "429": {
+            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 20 | 120 | 240 | collectiveIdentifier\n",
+            "headers": {
+              "Retry-After": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetryAfter"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsProblemDetails"
+                }
+              }
+            },
+            "x-summary": "Too Many Requests"
+          },
           "403": {
             "description": "Forbidden",
             "content": {
@@ -2511,6 +2534,11 @@
             "Bearer": [ ]
           }
         ],
+        "x-rate-limits": {
+          "perSecond": 20,
+          "perMinute": 120,
+          "perHour": 240
+        },
         "x-sort": [
           {
             "field": "dateCreated",
@@ -2606,6 +2634,29 @@
             },
             "x-summary": "Bad Request"
           },
+          "429": {
+            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 20 | 120 | 240 | collectiveIdentifier\n",
+            "headers": {
+              "Retry-After": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetryAfter"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsProblemDetails"
+                }
+              }
+            },
+            "x-summary": "Too Many Requests"
+          },
           "403": {
             "description": "Forbidden",
             "content": {
@@ -2632,6 +2683,11 @@
             "Bearer": [ ]
           }
         ],
+        "x-rate-limits": {
+          "perSecond": 20,
+          "perMinute": 120,
+          "perHour": 240
+        },
         "x-sort": [
           {
             "field": "ksefNumber",
@@ -3089,9 +3145,9 @@
                     "perHour": 64
                   },
                   "collectiveIdentifier": {
-                    "perSecond": 10,
-                    "perMinute": 60,
-                    "perHour": 120
+                    "perSecond": 20,
+                    "perMinute": 120,
+                    "perHour": 240
                   },
                   "other": {
                     "perSecond": 10,
