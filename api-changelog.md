@@ -5,6 +5,9 @@
   - Zwiększono limity API z `10/60/120` do `20/120/240` dla wszytkich endpointów z grupy `collectiveIdentifier`.
   - Dodano przykłady odpowiedzi.
 
+- **Eksport paczki faktur (POST `/invoices/exports`). Pobranie listy metadanych faktur (POST `/invoices/query/metadata`)**    
+  Zwiększono maksymalny zakres dateRange z 3 miesięcy do 100 dni liczonych w UTC. Zmiana jest kompatybilna wstecznie.
+
 ### Wersja 2.7.0
 | Środowisko | Data wdrożenia |
 | ---------- | -------------: |

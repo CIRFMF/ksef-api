@@ -15248,7 +15248,7 @@
                 "$ref": "#/components/schemas/InvoiceQueryDateRange"
               }
             ],
-            "description": "Typ i zakres dat, według którego filtrowane są faktury.\nMaksymalny dozwolony okres wynosi 3 miesiące w strefie UTC lub w strefie Europe/Warsaw (WAW).\n            \nFormat daty:\n * Daty muszą być przekazane w formacie ISO 8601, np. `yyyy-MM-ddTHH:mm:ss`.\n * Dopuszczalne są następujące warianty:\n   - z sufiksem `Z` (czas UTC),\n   - z jawnym offsetem, np. `+01:00`, `+03:00`,\n   - bez offsetu (interpretowane jako czas lokalny strefy Europe/Warsaw)."
+            "description": "Typ i zakres dat, według którego filtrowane są faktury.\nMaksymalny dozwolony okres wynosi 100 dni w strefie UTC\n            \nFormat daty:\n * Daty muszą być przekazane w formacie ISO 8601, np. `yyyy-MM-ddTHH:mm:ss`.\n * Dopuszczalne są następujące warianty:\n   - z sufiksem `Z` (czas UTC),\n   - z jawnym offsetem, np. `+01:00`, `+03:00`"
           },
           "ksefNumber": {
             "allOf": [
