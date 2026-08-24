@@ -8,7 +8,7 @@ Sesja interaktywna służy do przesyłania pojedynczych faktur ustrukturyzowanyc
 Aby skorzystać z wysyłki interaktywnej, należy najpierw przejść proces [uwierzytelnienia](uwierzytelnianie.md) i posiadać aktualny token dostępowy (```accessToken```), który uprawnia do korzystania z chronionych zasobów API KSeF.
 
 Przed otwarciem sesji oraz wysłaniem faktur wymagane jest:
-* wygenerowanie klucza symetrycznego o długości 256 bitów i wektora inicjującego o długości 128 bitów (IV), dołączanego jako prefiks do szyfrogramu,
+* wygenerowanie klucza symetrycznego o długości 256 bitów i wektora inicjującego o długości 128 bitów (IV),
 * zaszyfrowanie dokumentu algorytmem AES-256-CBC z dopełnianiem PKCS#7,
 * zaszyfrowanie klucza symetrycznego algorytmem RSAES-OAEP (padding OAEP z funkcją MGF1 opartą na SHA-256 oraz skrótem SHA-256), przy użyciu klucza publicznego KSeF Ministerstwa Finansów.
 
