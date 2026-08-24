@@ -17,7 +17,7 @@ Aby skorzystać z wysyłki wsadowej, należy najpierw przejść proces [uwierzyt
 Przed utworzeniem paczki do wysyłki wsadowej zaleca się obliczyć skrót SHA-256 dla każdego pliku XML faktury (oryginał, przed szyfrowaniem) oraz zapisać lokalne mapowanie. Umożliwia to jednoznaczne powiązanie statusów przetwarzania po stronie KSeF z lokalnymi dokumentami źródłowymi (XML) przygotowanymi do wysyłki.
 
 Przed otwarciem sesji oraz wysłaniem faktur wymagane jest:
-* wygenerowanie klucza symetrycznego o długości 256 bitów i wektora inicjującego o długości 128 bitów (IV), dołączanego jako prefiks do szyfrogramu,
+* wygenerowanie klucza symetrycznego o długości 256 bitów i wektora inicjującego o długości 128 bitów (IV),
 * przygotowanie paczki ZIP,
 * (opcjonalnie, jeśli paczka przekracza dopuszczalny rozmiar) podział paczki ZIP na części,
 * zaszyfrowanie części algorytmem AES-256-CBC z dopełnianiem PKCS#7,
