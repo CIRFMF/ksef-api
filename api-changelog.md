@@ -12,6 +12,9 @@
   - Zwiększono limity API z `10/60/120` do `20/120/240` dla wszytkich endpointów z grupy `collectiveIdentifier`.
   - Dodano przykłady odpowiedzi.
 
+- **Limity identyfikatorów zbiorczych**  
+  Rozszerzono limity bieżącego kontekstu o `collectiveIdentifier.maxInvoices` - maksymalną liczbę faktur w pojedynczym IZ. Limit jest zwracany przez GET `/limits/context`, a na środowisku TEST może być modyfikowany przez POST `/testdata/limits/context/session`.
+
 - **Eksport paczki faktur (POST `/invoices/exports`). Pobranie listy metadanych faktur (POST `/invoices/query/metadata`)**    
   Zwiększono maksymalny zakres dateRange z 3 miesięcy do 100 dni liczonych w UTC. Zmiana jest kompatybilna wstecznie.
 

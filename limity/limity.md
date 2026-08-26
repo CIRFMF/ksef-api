@@ -1,5 +1,5 @@
 # Limity
-21.10.2025
+26.08.2026
 
 ## Wstęp
 
@@ -22,6 +22,7 @@ Więcej informacji znajduje się w [Limity żądań API](limity-api.md).
 | Maksymalny rozmiar faktury bez załącznika                | 1 MB                                  |
 | Maksymalny rozmiar faktury z załącznikiem                 | 3 MB                                  |
 | Maksymalna liczba faktur w sesji interaktywnej/wsadowej | 10 000                                 |
+| Maksymalna ilość faktur które można przesłać w pojedynczym identyfikatorze zbiorczym. | 500                                 |
 
 ## Limity na uwierzytelniony podmiot
 

@@ -2948,6 +2948,9 @@
                     "maxInvoiceSizeInMB": 1,
                     "maxInvoiceWithAttachmentSizeInMB": 3,
                     "maxInvoices": 10000
+                  },
+                  "collectiveIdentifier": {
+                    "maxInvoices": 500
                   }
                 }
               }
@@ -3307,7 +3310,8 @@
               "schema": {
                 "required": [
                   "onlineSession",
-                  "batchSession"
+                  "batchSession",
+                  "collectiveIdentifier"
                 ],
                 "allOf": [
                   {
@@ -12003,6 +12007,35 @@
           }
         }
       },
+      "CollectiveIdentifierContextLimitsOverride": {
+        "required": [
+          "maxInvoices"
+        ],
+        "type": "object",
+        "properties": {
+          "maxInvoices": {
+            "maximum": 5000,
+            "minimum": 2,
+            "type": "integer",
+            "description": "Maksymalna ilość faktur które można przesłać w pojedynczym identyfikatorze zbiorczym.",
+            "format": "int32"
+          }
+        }
+      },
+      "CollectiveIdentifierEffectiveContextLimits": {
+        "required": [
+          "maxInvoices"
+        ],
+        "type": "object",
+        "properties": {
+          "maxInvoices": {
+            "minimum": 2,
+            "type": "integer",
+            "description": "Maksymalna ilość faktur które można przesłać w pojedynczym identyfikatorze zbiorczym.",
+            "format": "int32"
+          }
+        }
+      },
       "CollectiveIdentifierInvoice": {
         "required": [
           "ksefNumber"
@@ -12720,6 +12753,7 @@
       "EffectiveContextLimits": {
         "required": [
           "batchSession",
+          "collectiveIdentifier",
           "onlineSession"
         ],
         "type": "object",
@@ -12749,6 +12783,17 @@
               }
             ],
             "description": "Limity dla sesji wsadowych."
+          },
+          "collectiveIdentifier": {
+            "required": [
+              "maxInvoices"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CollectiveIdentifierEffectiveContextLimits"
+              }
+            ],
+            "description": "Limity dla identyfikatorów zbiorczych."
           }
         }
       },
@@ -17918,6 +17963,7 @@
       "SetSessionLimitsRequest": {
         "required": [
           "batchSession",
+          "collectiveIdentifier",
           "onlineSession"
         ],
         "type": "object",
@@ -17947,6 +17993,17 @@
               }
             ],
             "description": "Limity dla sesji wsadowych."
+          },
+          "collectiveIdentifier": {
+            "required": [
+              "maxInvoices"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CollectiveIdentifierContextLimitsOverride"
+              }
+            ],
+            "description": "Limity dla identyfikatorów zbiorczych."
           }
         }
       },
