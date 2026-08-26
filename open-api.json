@@ -6023,7 +6023,8 @@
                     ],
                     "isTruncated": true,
                     "lastPermanentStorageDate": "2025-09-11T11:40:40.266578+00:00",
-                    "permanentStorageHwmDate": "2025-09-11T12:00:40.266578+00:00"
+                    "permanentStorageHwmDate": "2025-09-11T12:00:40.266578+00:00",
+                    "compressionType": "Zip"
                   }
                 }
               }
@@ -14661,7 +14662,8 @@
               "invoiceCount",
               "size",
               "parts",
-              "isTruncated"
+              "isTruncated",
+              "compressionType"
             ],
             "allOf": [
               {
@@ -14999,6 +15001,7 @@
       },
       "InvoicePackage": {
         "required": [
+          "compressionType",
           "invoiceCount",
           "isTruncated",
           "parts",
@@ -15053,6 +15056,13 @@
             "description": "Dotyczy wyłącznie zapytań filtrowanych po typie daty <b>PermanentStorage</b>.\nJeśli zapytanie dotyczyło najnowszego okresu, wartość ta może być wartością nieznacznie skorygowaną względem górnej granicy podanej w warunkach zapytania.\nDla okresów starszych, będzie to zgodne z warunkami zapytania. \n\nSystem gwarantuje, że dane poniżej tej wartości są spójne i kompletne.\nPonowne zapytania obejmujące zakresem dane poniżej tego kroczącego znacznika czasu nie zwrócą w przyszłości innych wyników (np.dodatkowych faktur). \n\nDla dateType = Issue lub Invoicing – null.",
             "format": "date-time",
             "nullable": true
+          },
+          "compressionType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CompressionType"
+              }
+            ]
           }
         }
       },

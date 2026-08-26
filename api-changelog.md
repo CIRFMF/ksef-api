@@ -8,6 +8,9 @@
 - **Eksport paczki faktur (POST `/invoices/exports`). Pobranie listy metadanych faktur (POST `/invoices/query/metadata`)**    
   Zwiększono maksymalny zakres dateRange z 3 miesięcy do 100 dni liczonych w UTC. Zmiana jest kompatybilna wstecznie.
 
+- **Pobranie statusu eksportu paczki faktur (GET `/invoices/exports/{referenceNumber}`)**  
+  Rozszerzono odpowiedź o właściwość `compressionType`, wskazującą typ kompresji paczki.  
+
 ### Wersja 2.7.0
 | Środowisko | Data wdrożenia |
 | ---------- | -------------: |
