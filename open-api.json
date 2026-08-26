@@ -2294,7 +2294,7 @@
           "Identyfikatory zbiorcze"
         ],
         "summary": "Generowanie identyfikatora zbiorczego",
-        "description": "Generuje identyfikator zbiorczy dla przekazanej listy numerów KSeF faktur\nwystawionych przez tego samego sprzedawcę.\n\nMaksymalna liczba faktur przypisanych do jednego identyfikatora zbiorczego wynosi 500.\nJedna faktura może zostać przypisana do maksymalnie 132 identyfikatorów zbiorczych\nw ramach jednego kontekstu.\n            \nIdentyfikator zbiorczy ma format:\n`9999999999-IZRRRRMM-FFFFFFFFFFFF-FF`, gdzie:\n- `9999999999` – 10-cyfrowy NIP sprzedawcy,\n- `IZ` – stały prefiks,\n- `RRRRMM` – rok i miesiąc utworzenia,\n- `FFFFFFFFFFFF` –  część techniczna składająca się z 12 znaków w zapisie szesnastkowym, tylko [0–9 A–F], wielkie litery,\n- `FF` –  suma kontrolna CRC-8 - 2 znaki w zapisie szesnastkowym, tylko [0–9 A–F], wielkie litery.\n            \nDo obliczenia sumy kontrolnej stosowany jest algorytm CRC-8 z parametrami:\n- Polinom: 0x07\n- Wartość początkowa: 0x00\n- Format wyniku: 2-znakowy zapis szesnastkowy(HEX, wielkie litery)\n\nPrzykład:\n`1111111111-IZ202607-65ED02180000-E7`.\n\n**Headers:**\n\n`X-Error-Format: problem-details` - ustawienie tego nagłówka powoduje zwracanie błędów w formacie **Problem Details** (`application/problem+json`).\n\n**Wymagane jedno z uprawnień**: `InvoiceRead`, `InvoiceWrite`, `CollectiveIdentifierManage`.",
+        "description": "Generuje identyfikator zbiorczy dla przekazanej listy numerów KSeF faktur\nwystawionych przez tego samego sprzedawcę.\n\n**Headers:**\n\n`X-Error-Format: problem-details` - ustawienie tego nagłówka powoduje zwracanie błędów w formacie **Problem Details** (`application/problem+json`).\n\n**Wymagane jedno z uprawnień**: `InvoiceRead`, `InvoiceWrite`, `CollectiveIdentifierManage`.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -12015,7 +12015,7 @@
                 "$ref": "#/components/schemas/KsefNumber"
               }
             ],
-            "description": "Numer ksef faktury."
+            "description": "Numer ksef faktury.\n\nJedna faktura może zostać przypisana do maksymalnie 132 identyfikatorów zbiorczych w ramach jednego kontekstu."
           },
           "payment": {
             "required": [
@@ -14268,7 +14268,7 @@
             "items": {
               "$ref": "#/components/schemas/CollectiveIdentifierInvoice"
             },
-            "description": "Lista faktur wchodząca w skład identyfikatora zbiorczego. Limit faktur wynosi 500."
+            "description": "Lista faktur wchodząca w skład identyfikatora zbiorczego. Domyślny [limit](https://github.com/CIRFMF/ksef-api/blob/main/limity/limity.md) faktur wynosi 500."
           }
         }
       },
@@ -14282,7 +14282,7 @@
             "maxLength": 35,
             "minLength": 35,
             "type": "string",
-            "description": "Wygenerowany identyfikator zbiorczy"
+            "description": "Wygenerowany identyfikator zbiorczy\n\nIdentyfikator zbiorczy ma format:\n`9999999999-IZRRRRMM-FFFFFFFFFFFF-FF`, gdzie:\n- `9999999999` – 10-cyfrowy NIP sprzedawcy,\n- `IZ` – stały prefiks,\n- `RRRRMM` – rok i miesiąc utworzenia,\n- `FFFFFFFFFFFF` –  część techniczna składająca się z 12 znaków w zapisie szesnastkowym, tylko [0–9 A–F], wielkie litery,\n- `FF` –  suma kontrolna CRC-8 - 2 znaki w zapisie szesnastkowym, tylko [0–9 A–F], wielkie litery.\n            \nDo obliczenia sumy kontrolnej stosowany jest algorytm CRC-8 z parametrami:\n- Polinom: 0x07\n- Wartość początkowa: 0x00\n- Format wyniku: 2-znakowy zapis szesnastkowy(HEX, wielkie litery)\n\nPrzykład:\n`1111111111-IZ202607-65ED02180000-E7`."
           }
         }
       },
