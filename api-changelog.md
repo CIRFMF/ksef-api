@@ -11,6 +11,9 @@
 - **Pobranie statusu eksportu paczki faktur (GET `/invoices/exports/{referenceNumber}`)**  
   Rozszerzono odpowiedź o właściwość `compressionType`, wskazującą typ kompresji paczki.  
 
+- **OpenAPI**  
+  Uzupełniono opis `X-System-Warning` o sposób testowania ostrzeżeń z wykorzystaniem nagłówka `X-Test-System-Warning`.  
+
 ### Wersja 2.7.0
 | Środowisko | Data wdrożenia |
 | ---------- | -------------: |
