@@ -12,6 +12,9 @@
     - sesja interaktywna: `20/60/240`,
     - sesja wsadowa: `20/40/120`.
 
+- **Wysyłka faktur w sesji interaktywnej (POST `/sessions/online/{referenceNumber}/invoices`)**  
+  Dodano kod błędu `21184` ("Sesja tymczasowo niedostępna"), zwracany z HTTP 400 w przypadku czasowego wstrzymania możliwości wysyłki faktur w ramach istniejącej sesji. Rekomendowane jest otwarcie nowej sesji i kontynuowanie wysyłki.
+
 - **Wysyłka faktur**  
   Na środowiskach testowych dodano możliwość włączenia walidacji numerów NIP oraz identyfikatorów wewnętrznych podmiotów za pomocą nagłówka `X-KSeF-Feature`: `subject-identifier-validation`.
 
