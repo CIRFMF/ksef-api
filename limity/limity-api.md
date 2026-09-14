@@ -1,5 +1,5 @@
 ## Limity żądań API
-22.11.2025
+14.09.2026
 
 Ze względu na skalę działania KSeF oraz jego publiczny charakter, wprowadzono mechanizmy ograniczające intensywność żądań API. Ich celem jest ochrona stabilności systemu, ochrona przed cyber zagrożeniami oraz zapewnienie równych warunków dostępu dla wszystkich użytkowników. Limity określają maksymalną liczbę zapytań, które można wykonać w określonym czasie i wymuszają taki sposób integracji, który jest zgodny z założeniami architektury systemu.
 
@@ -178,7 +178,7 @@ Przykładowe scenariusze zastosowania trybu wsadowego:
 | Endpoint | | req/s | req/min | req/h |
 |----------|---|-------|---------|-------|
 | Otwarcie sesji wsadowej * | POST /sessions/batch | 10 | 20 | 60 |
-| Zamknięcie sesji wsadowej | POST /sessions/batch/{referenceNumber}/close | 10 | 20 | 60 |
+| Zamknięcie sesji wsadowej | POST /sessions/batch/{referenceNumber}/close | 20 | 40 | 120 |
 
 **Wysyłka części paczki** - żądania przesyłające części paczki w ramach jednej sesji wsadowej nie są objęte limitami API. W przypadku paczek podzielonych na wiele części zaleca się ich równoległe (wielowątkowe) przesyłanie, co znacząco skraca czas wysyłki.
 
@@ -198,7 +198,7 @@ Tryb interaktywny, mimo większego narzutu sieciowego w przypadku większych wol
 |----------|---|-------|---------|-------|
 | Otwarcie sesji interaktywnej | POST /sessions/online | 10 | 30 | 120 |
 | Wysłanie faktury * | POST /sessions/online/{referenceNumber}/invoices | 10 | 30 | 180 |
-| Zamknięcie sesji interaktywnej | POST /sessions/online/{referenceNumber}/close | 10 | 30 | 120 |
+| Zamknięcie sesji interaktywnej | POST /sessions/online/{referenceNumber}/close | 20 | 60 | 240 |
 
 \* **Uwaga:** Jeżeli w scenariuszach biznesowych organizacji regularnie osiągane są limity wysyłki w sesji interaktywnej, w pierwszej kolejności należy rozważyć zastosowanie trybu wsadowego, który pozwala efektywniej wykorzystać dostępne zasoby i limity.
 W sytuacjach, gdy użycie sesji interaktywnej jest niezbędne, a osiągane limity pozostają niewystarczające, prosimy o kontakt z działem wsparcia KSeF w celu indywidualnej analizy i pomocy w doborze rozwiązania.

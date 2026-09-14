@@ -1,5 +1,17 @@
 ## Zmiany w API 2.0
 
+### Wersja 2.7.2
+| Środowisko | Data wdrożenia |
+| ---------- | -------------: |
+| **TEST**   |     14.09.2026 |
+| **DEMO**   |     15.09.2026 |
+| **PRD**    |     23.09.2026 |
+
+- **Limity API**  
+  Wydzielono operacje zamykania sesji do osobnych grup limitów i zwiększono ich wartości do poziomu dwukrotnie wyższego niż limity dla operacji otwierania sesji:
+    - sesja interaktywna: `20/60/240`,
+    - sesja wsadowa: `20/40/120`.
+
 ### Wersja 2.7.1
 | Środowisko | Data wdrożenia |
 | ---------- | -------------: |
