@@ -12542,7 +12542,12 @@
           "YER",
           "ZAR",
           "ZMW",
-          "ZWL"
+          "ZWL",
+          "CNH",
+          "VED",
+          "XTS",
+          "ZWG",
+          "SLE"
         ],
         "type": "string"
       },
