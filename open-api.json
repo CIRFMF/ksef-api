@@ -14257,7 +14257,6 @@
           "detail",
           "reasonCode",
           "status",
-          "timestamp",
           "title"
         ],
         "type": "object",
