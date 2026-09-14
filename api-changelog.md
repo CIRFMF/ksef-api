@@ -8,9 +8,10 @@
 | **PRD**    |     23.09.2026 |
 
 - **Limity API**  
-  Wydzielono operacje zamykania sesji do osobnych grup limitów i zwiększono ich wartości do poziomu dwukrotnie wyższego niż limity dla operacji otwierania sesji:
+  - Wydzielono operacje zamykania sesji do osobnych grup limitów i zwiększono ich wartości do poziomu dwukrotnie wyższego niż limity dla operacji otwierania sesji:
     - sesja interaktywna: `20/60/240`,
     - sesja wsadowa: `20/40/120`.
+  - Uzupełniono odpowiedź GET `/rate-limits` o grupę `anonymous`, zawierającą limity dla anonimowych operacji API. Zmiana ma charakter porządkujący — limity obowiązywały już wcześniej, ale nie były zwracane przez ten endpoint.
 
 - **Wysyłka faktur w sesji interaktywnej (POST `/sessions/online/{referenceNumber}/invoices`)**  
   Dodano kod błędu `21184` ("Sesja tymczasowo niedostępna"), zwracany z HTTP 400 w przypadku czasowego wstrzymania możliwości wysyłki faktur w ramach istniejącej sesji. Rekomendowane jest otwarcie nowej sesji i kontynuowanie wysyłki.

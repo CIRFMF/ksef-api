@@ -3230,6 +3230,11 @@
                     "perSecond": 10,
                     "perMinute": 30,
                     "perHour": 120
+                  },
+                  "anonymous": {
+                    "perSecond": 60,
+                    "perMinute": -1,
+                    "perHour": -1
                   }
                 }
               }
@@ -12578,6 +12583,7 @@
       },
       "EffectiveApiRateLimits": {
         "required": [
+          "anonymous",
           "batchSession",
           "batchSessionClose",
           "collectiveIdentifier",
@@ -12790,6 +12796,19 @@
               }
             ],
             "description": "Limity dla pozostałych operacji API."
+          },
+          "anonymous": {
+            "required": [
+              "perSecond",
+              "perMinute",
+              "perHour"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EffectiveApiRateLimitValues"
+              }
+            ],
+            "description": "Limity dla anonimowych operacji API (nieuwierzytelnionych)."
           }
         }
       },
