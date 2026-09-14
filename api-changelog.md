@@ -12,6 +12,9 @@
     - sesja interaktywna: `20/60/240`,
     - sesja wsadowa: `20/40/120`.
 
+- **Wysyłka faktur**  
+  Na środowiskach testowych dodano możliwość włączenia walidacji numerów NIP oraz identyfikatorów wewnętrznych podmiotów za pomocą nagłówka `X-KSeF-Feature`: `subject-identifier-validation`.
+
 ### Wersja 2.7.1
 | Środowisko | Data wdrożenia |
 | ---------- | -------------: |
