@@ -3235,6 +3235,11 @@
                     "perSecond": 60,
                     "perMinute": -1,
                     "perHour": -1
+                  },
+                  "global": {
+                    "perSecond": -1,
+                    "perMinute": -1,
+                    "perHour": -1
                   }
                 }
               }
@@ -12587,6 +12592,7 @@
           "batchSession",
           "batchSessionClose",
           "collectiveIdentifier",
+          "global",
           "invoiceDownload",
           "invoiceExport",
           "invoiceExportStatus",
@@ -12809,6 +12815,19 @@
               }
             ],
             "description": "Limity dla anonimowych operacji API (nieuwierzytelnionych)."
+          },
+          "global": {
+            "required": [
+              "perSecond",
+              "perMinute",
+              "perHour"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EffectiveApiRateLimitValues"
+              }
+            ],
+            "description": "Limity globalne dla wszystkich operacji API (per adres IP)."
           }
         }
       },

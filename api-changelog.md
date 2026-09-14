@@ -12,6 +12,7 @@
     - sesja interaktywna: `20/60/240`,
     - sesja wsadowa: `20/40/120`.
   - Uzupełniono odpowiedź GET `/rate-limits` o grupę `anonymous`, zawierającą limity dla anonimowych operacji API. Zmiana ma charakter porządkujący — limity obowiązywały już wcześniej, ale nie były zwracane przez ten endpoint.
+  - Rozszerzono odpowiedź GET `/rate-limits` o grupę `global`, przeznaczoną dla **przyszłych globalnych limitów API** naliczanych per adres IP. Mechanizm jest obecnie wyłączony i nie wpływa na integracje. Będzie dotyczył przede wszystkim dostawców aplikacji obsługujących dużą liczbę podmiotów i ma na celu zwiększenie bezpieczeństwa ich integracji. Szczegóły działania i harmonogram włączenia zostaną przedstawione w odrębnej komunikacji.
 
 - **Wysyłka faktur w sesji interaktywnej (POST `/sessions/online/{referenceNumber}/invoices`)**  
   Dodano kod błędu `21184` ("Sesja tymczasowo niedostępna"), zwracany z HTTP 400 w przypadku czasowego wstrzymania możliwości wysyłki faktur w ramach istniejącej sesji. Rekomendowane jest otwarcie nowej sesji i kontynuowanie wysyłki.
