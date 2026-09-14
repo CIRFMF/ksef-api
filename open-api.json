@@ -2501,7 +2501,7 @@
                   "collectiveIdentifiers": [
                     {
                       "collectiveIdentifierNumber": "1111111111-IZ202607-65ED02180000-E7",
-                      "dateCreated": "2026-07-10T12:00:00+02:00",
+                      "dateCreated": "2026-07-11T12:00:00+00:00",
                       "invoiceCount": 16,
                       "createdInCurrentContext": true
                     }
@@ -2603,7 +2603,7 @@
           "Identyfikatory zbiorcze"
         ],
         "summary": "Pobranie listy faktur wchodzących w skład identyfikatora zbiorczego",
-        "description": "Zwraca listę numerów KSeF faktur wchodzących w skład identyfikatora zbiorczego.\n            \nInformacje o kwocie i walucie płatności są zwracane wyłącznie podmiotowi, który utworzył identyfikator zbiorczy, lub podmiotowi występującemu w roli na danej fakturze.\n\nJeżeli kwota i waluta płatności zostały określone podczas tworzenia identyfikatora zbiorczego, a podmiot nie ma dostępu do tych informacji, pola dotyczące kwoty i waluty płatności nie są zwracane, a pole <b>detailsHidden</b> przyjmuje wartość <b>true</b>.\n\nJeżeli kwota i waluta płatności nie zostały określone podczas tworzenia identyfikatora zbiorczego, ich wartości pozostają puste, a pole <b>detailsHidden</b> przyjmuje wartość <b>false</b>.\n\n**Headers:**\n\n`X-Error-Format: problem-details` - ustawienie tego nagłówka powoduje zwracanie błędów w formacie **Problem Details** (`application/problem+json`).\n\n**Sortowanie:**\n\n- ksefNumber (Desc)\n\n\n\n**Wymagane jedno z uprawnień**: `InvoiceRead`, `InvoiceWrite`, `CollectiveIdentifierManage`.",
+        "description": "Zwraca listę numerów KSeF faktur wchodzących w skład identyfikatora zbiorczego.\n            \nInformacje o opisie, kwocie i walucie płatności są zwracane wyłącznie podmiotowi, który utworzył identyfikator zbiorczy, lub podmiotowi występującemu w roli na danej fakturze.\n\nJeżeli opis, kwota i waluta płatności zostały określone podczas tworzenia identyfikatora zbiorczego, a podmiot nie ma dostępu do tych informacji, pola dotyczące opisu, kwoty i waluty płatności nie są zwracane, a pole <b>detailsHidden</b> przyjmuje wartość <b>true</b>.\n\nJeżeli opis, kwota i waluta płatności nie zostały określone podczas tworzenia identyfikatora zbiorczego, ich wartości pozostają puste, a pole <b>detailsHidden</b> przyjmuje wartość <b>false</b>.\n\n**Headers:**\n\n`X-Error-Format: problem-details` - ustawienie tego nagłówka powoduje zwracanie błędów w formacie **Problem Details** (`application/problem+json`).\n\n**Sortowanie:**\n\n- ksefNumber (Desc)\n\n\n\n**Wymagane jedno z uprawnień**: `InvoiceRead`, `InvoiceWrite`, `CollectiveIdentifierManage`.",
         "parameters": [
           {
             "name": "x-continuation-token",

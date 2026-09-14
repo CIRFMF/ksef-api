@@ -18,6 +18,7 @@
 - **OpenAPI**  
   - Rozszerzono słownik kodów krajów o wartości: `CNH`, `VED`, `XTS`, `ZWG`, `SLE`; zmiana dotyczy obszarów "Pobieranie faktur" oraz "Identyfikatory zbiorcze".
   - Uzupełniono ograniczenia długości `PublicKeyCertificate.publicKeyId` - dodano `minLength/maxLength: 44`.
+  - Drobne aktualizacje opisów i przykładów.
 
 ### Wersja 2.7.1
 | Środowisko | Data wdrożenia |
