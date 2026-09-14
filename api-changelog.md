@@ -1,6 +1,6 @@
 ## Zmiany w API 2.0
 
-### Wersja 2.7.2
+### Wersja 2.8.0
 | Środowisko | Data wdrożenia |
 | ---------- | -------------: |
 | **TEST**   |     14.09.2026 |
