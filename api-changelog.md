@@ -16,7 +16,8 @@
   Na środowiskach testowych dodano możliwość włączenia walidacji numerów NIP oraz identyfikatorów wewnętrznych podmiotów za pomocą nagłówka `X-KSeF-Feature`: `subject-identifier-validation`.
 
 - **OpenAPI**  
-  Rozszerzono słownik kodów krajów o wartości: `CNH`, `VED`, `XTS`, `ZWG`, `SLE`; zmiana dotyczy obszarów "Pobieranie faktur" oraz "Identyfikatory zbiorcze".
+  - Rozszerzono słownik kodów krajów o wartości: `CNH`, `VED`, `XTS`, `ZWG`, `SLE`; zmiana dotyczy obszarów "Pobieranie faktur" oraz "Identyfikatory zbiorcze".
+  - Uzupełniono ograniczenia długości `PublicKeyCertificate.publicKeyId` - dodano `minLength/maxLength: 44`.
 
 ### Wersja 2.7.1
 | Środowisko | Data wdrożenia |

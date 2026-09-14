@@ -17103,6 +17103,8 @@
             "format": "byte"
           },
           "publicKeyId": {
+            "maxLength": 44,
+            "minLength": 44,
             "type": "string",
             "description": "Identyfikator klucza, używany jako selektor w wywołaniach, w których klient wskazuje, jakiego klucza publicznego użył do szyfrowania.",
             "format": "byte"
