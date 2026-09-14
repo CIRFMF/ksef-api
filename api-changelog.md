@@ -21,6 +21,9 @@
   - Zaktualizowano definicję `ForbiddenProblemDetails` dla odpowiedzi 403 - usunięto timestamp z listy pól `required`. Zmiana dostosowuje specyfikację do rzeczywistego zachowania API, m.in. dla `security-service-blocked`.
   - Drobne aktualizacje opisów i przykładów.
 
+- **Dane testowe**  
+  Uzupełniono dokumentację odpowiedzi `400 Bad Request` dla POST i DELETE `/testdata/limits/context/session` o standardowy kod błędu `21405` ("Błąd walidacji danych wejściowych").
+
 ### Wersja 2.7.1
 | Środowisko | Data wdrożenia |
 | ---------- | -------------: |
