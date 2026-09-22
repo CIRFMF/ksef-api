@@ -4,7 +4,7 @@
 | Środowisko | Data wdrożenia |
 | ---------- | -------------: |
 | **TEST**   |     22.09.2026 |
-| **DEMO**   |     22.09.2026 |
+| **DEMO**   |     23.09.2026 |
 | **PROD**   |     23.09.2026 |
 
 - **Identyfikatory zbiorcze**  
