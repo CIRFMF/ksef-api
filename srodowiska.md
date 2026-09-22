@@ -7,7 +7,7 @@ Poniżej zestawiono informacje o publicznych środowiskach.
 |-------|----------------------------------|-----------------------------------|----------------------------------|----------------------------------------------|
 | **TEST**  | Testowe <br/> (Release Candidate)        | Środowisko do testowania integracji z KSeF API 2.0, zawiera wersje RC. | https://api-test.ksef.mf.gov.pl/docs/v2   | FA(2), FA(3), FA_PEF (3), FA_KOR_PEF (3)     |
 | **DEMO**  | Przedprodukcyjne (Demo)    | Środowisko odpowiadające konfiguracji produkcyjnej, przeznaczone do końcowej walidacji integracji w warunkach zbliżonych do produkcji. | https://api-demo.ksef.mf.gov.pl/docs/v2   | FA(3), FA_PEF (3), FA_KOR_PEF (3)            |
-| **PRD** | Produkcyjne                        | Środowisko do wystawiania i odbierania faktur o pełnej mocy prawnej, z gwarantowanym SLA i właściwymi danymi produkcyjnymi.                           | https://api.ksef.mf.gov.pl/docs/v2             | FA(3), FA_PEF (3), FA_KOR_PEF (3)            |
+| **PROD**  | Produkcyjne                        | Środowisko do wystawiania i odbierania faktur o pełnej mocy prawnej, z gwarantowanym SLA i właściwymi danymi produkcyjnymi.                           | https://api.ksef.mf.gov.pl/docs/v2             | FA(3), FA_PEF (3), FA_KOR_PEF (3)            |
 
 
 
@@ -18,7 +18,7 @@ Z tego względu dane wprowadzone w środowisku `TE` nie są odizolowane i mogą 
 Do testów należy używać losowych identyfikatorów NIP, unikając jakichkolwiek danych rzeczywistych.
 
 ### Adresy URL zwracane przez API
-W każdym przypadku, gdy API zwraca adres URL do pobrania lub wysyłki zasobu, jego host odpowiada środowisku, do którego zostało skierowane wywołanie (TEST, DEMO albo PRD).
+W każdym przypadku, gdy API zwraca adres URL do pobrania lub wysyłki zasobu, jego host odpowiada środowisku, do którego zostało skierowane wywołanie (`TEST`, `DEMO` albo `PROD`).
 
 ### Prace serwisowe na środowiskach testowych
 W związku z planowanym, systematycznym rozwojem Krajowego Systemu e-Faktur (KSeF 2.0), **od dnia 1 października 2025 r.** na środowiskach testowych Systemu mogą być prowadzone cykliczne prace serwisowe.

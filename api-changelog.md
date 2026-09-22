@@ -5,7 +5,7 @@
 | ---------- | -------------: |
 | **TEST**   |     14.09.2026 |
 | **DEMO**   |     15.09.2026 |
-| **PRD**    |     23.09.2026 |
+| **PROD**   |     23.09.2026 |
 
 - **Limity API**  
   - Wydzielono operacje zamykania sesji do osobnych grup limitów i zwiększono ich wartości do poziomu dwukrotnie wyższego niż limity dla operacji otwierania sesji:
@@ -34,7 +34,7 @@
 | ---------- | -------------: |
 | **TEST**   |     26.08.2026 |
 | **DEMO**   |     15.09.2026 |
-| **PRD**    |     23.09.2026 |
+| **PROD**   |     23.09.2026 |
 
 - **Identyfikatory zbiorcze**  
   - Zmieniono endpoint GET `/collective-identifiers/{collectiveIdentifierNumber}/invoices` na POST /`collective-identifiers/invoices`. Metoda przyjmuje listę maksymalnie 10 identyfikatorów zbiorczych zamiast pojedynczego numeru. Odpowiedź rozszerzono o `collectiveIdentifierNumber`, zwiększono maksymalny `pageSize` z 200 do 500, objęto endpoint limitami API oraz dodano przykład odpowiedzi.
@@ -58,7 +58,7 @@
 | ---------- | -------------: |
 | **TEST**   |     21.07.2026 |
 | **DEMO**   |     - |
-| **PRD**    |     - |
+| **PROD**   |     - |
 
 - **Identyfikatory zbiorcze**  
   Dodano obsługę identyfikatorów zbiorczych oraz nowe uprawnienie `CollectiveIdentifierManage`, wymagane do wykonywania operacji na IZ.
@@ -74,7 +74,7 @@
 | ---------- | -------------: |
 | **TEST**   |     10.06.2026 |
 | **DEMO**   |     11.06.2026 |
-| **PRD**    |     16.06.2026 |
+| **PROD**   |     16.06.2026 |
 
 - **Pobranie statusu uwierzytelniania (GET `/auth/{referenceNumber})`**  
   Ujednolicono komunikaty w polu details dla statusu `450` ("Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu") - treści są teraz zwracane w języku polskim, zgodnie z dokumentacją. Dodatkowo uzupełniono dokumentację o kilka wariantów details, które występowały w odpowiedziach API, ale nie były wcześniej opisane.
@@ -90,7 +90,7 @@
 | ---------- | -------------: |
 | **TEST**   |     19.05.2026 |
 | **DEMO**   |     21.05.2026 |
-| **PRD**    |     26.05.2026 |
+| **PROD**   |     26.05.2026 |
 
   - **Wysyłka wsadowa (POST `/sessions/batch`) oraz eksport paczki faktur (POST `/invoices/exports`)**  
   Dodano typ kompresji `TarGz` jako alternatywę dla `Zip`. Format `TarGz` jest rekomendowany ze względu na możliwość uzyskania lepszego współczynnika kompresji dla paczek zawierających wiele podobnych dokumentów XML. Domyślnym typem kompresji pozostaje `Zip` w celu zachowania kompatybilności.
@@ -107,7 +107,7 @@
 | ---------- | -------------: |
 | **TEST**   |     06.05.2026 |
 | **DEMO**   |     07.05.2026 |
-| **PRD**    |     11.05.2026 |
+| **PROD**   |     11.05.2026 |
 
 - **Klucze publiczne KSeF (rotacja i selekcja kluczy)**  
   Wprowadzono przekazywanie selektora `publicKeyId` w żądaniach do operacji, w których klient szyfruje dane kluczem publicznym KSeF - umożliwia to jednoznaczną identyfikację użytego klucza oraz poprawną i automatyczną obsługę re-certyfikacji/rotacji. Rozszerzenie dotyczy endpointów: 
@@ -123,7 +123,7 @@
   - W schemie 2.1 zaktualizowano wyrażenia regularne dla adresów IP (`Ip4Address`, `Ip4Range`, `Ip4Mask`), aby były zgodne z typowymi parserami.
 
 - **Limity API**  
-  Zrównano domyślne limity API na środowisku TEST z wartościami obowiązującymi na PRD. Na środowisku TEST nadal dostępne są endpointy z grupy `/testdata/rate-limits`, umożliwiające testowanie niestandardowych profili limitów.
+  Zrównano domyślne limity API na środowisku TEST z wartościami obowiązującymi na PROD. Na środowisku TEST nadal dostępne są endpointy z grupy `/testdata/rate-limits`, umożliwiające testowanie niestandardowych profili limitów.
 
 - **OpenAPI**  
   - Uzupełniono opisy parametru `certificateSerialNumber` o format i ograniczenia (`minLength/maxLength: 16`, `pattern: ^[0-9A-F]{16}$`). Zmiana ma charakter dokumentacyjny - nie wprowadza dodatkowej walidacji po stronie API i nie zmienia zachowania endpointów (np. POST `/certificates/retrieve`).
@@ -135,7 +135,7 @@
 | ---------- | -------------: | ---------------------------------------------------------------- |
 | **TEST**   |     10.04.2026 | —                                                                |
 | **DEMO**   |     13.04.2026 | —                                                                |
-| **PRD**    |     16.04.2026 | Zaostrzenie walidacji XML zacznie obowiązywać od **16.07.2026**. |
+| **PROD**   |     16.04.2026 | Zaostrzenie walidacji XML zacznie obowiązywać od **16.07.2026**. |
 
 
 - **Tokeny KSeF**
@@ -188,7 +188,7 @@
   - Doprecyzowano wartość pola `Value` dla schemy `FA_RR (1) 1-1E`: zamiast `RR` należy przekazywać `FA_RR` (zgodnie z wartością `TKodFormularza` w XSD).
 
 - **Pobranie faktur**   
-  - Rozszerzono obsługę `formType` dla faktur `RR` o wartość `FA_RR` (spójnie z mechanizmem wysyłki faktur). Na środowisku TEST akceptowane są `RR` (do 30.03) oraz `FA_RR`, natomiast na PRD akceptowana będzie wyłącznie `FA_RR`.
+  - Rozszerzono obsługę `formType` dla faktur `RR` o wartość `FA_RR` (spójnie z mechanizmem wysyłki faktur). Na środowisku TEST akceptowane są `RR` (do 30.03) oraz `FA_RR`, natomiast na PROD akceptowana będzie wyłącznie `FA_RR`.
   - Umożliwiono wyszukiwanie faktur po ujemnych kwotach w filtrze `amount` - dopuszczono wartości ujemne w `amount.from` i `amount.to`.
 
 - **Eksport paczki faktur (POST `/invoices/exports`)**  
@@ -206,7 +206,7 @@
 - **Wysyłka faktur**  
   Dodano nową wersję (`1-1E`) schemy `FA_RR (1)`.  
   Schema `FA_RR (1) 1-0E` będzie obsługiwana na środowisku TEST do 23.04.
-  Schema `FA_RR (1) 1-1E` będzie obowiązywać na środowisku PRD od 01.04.  
+  Schema `FA_RR (1) 1-1E` będzie obowiązywać na środowisku PROD od 01.04.  
 
 ### Wersja 2.2.0
 
@@ -244,7 +244,7 @@
   - **Pobranie statusu uwierzytelniania (GET `/auth/{referenceNumber}`)** oraz **Pobranie listy aktywnych sesji (GET `/auth/sessions`)**  
   Uzupełniono definicję `authenticationMethodInfo` - oznaczono właściwości `category`, `code` oraz `displayName` jako `required` w modelu odpowiedzi.
   - **Uwierzytelnienie z wykorzystaniem podpisu XAdES (POST `/auth/xades-signature`)**  
-  Dodano możliwość wcześniejszego włączenia nowych wymagań walidacji XAdES na środowiskach DEMO i PRD poprzez nagłówek: `X-KSeF-Feature`: `enforce-xades-compliance`.  
+  Dodano możliwość wcześniejszego włączenia nowych wymagań walidacji XAdES na środowiskach DEMO i PROD poprzez nagłówek: `X-KSeF-Feature`: `enforce-xades-compliance`.  
 
 ### Wersja 2.1.0
 
@@ -260,7 +260,7 @@
 
   - **Uwierzytelnienie z wykorzystaniem podpisu XAdES (POST `/auth/xades-signature`)**  
     Ujednolicono i zaostrzono walidację [podpisu XAdES](/auth/podpis-xades.md) w procesie uwierzytelniania, tak aby akceptowane były wyłącznie podpisy zgodne z wymaganiami profili XAdES.  
-    Nowe wymagania obowiązują już na środowisku TEST. Na środowiskach DEMO i PRD zaczną obowiązywać **16 marca 2026** (zalecamy weryfikację integracji na TEST przed tą datą).
+    Nowe wymagania obowiązują już na środowisku TEST. Na środowiskach DEMO i PROD zaczną obowiązywać **16 marca 2026** (zalecamy weryfikację integracji na TEST przed tą datą).
 
 - **Dane testowe**  
   Dodano nowe endpointy:
@@ -408,8 +408,8 @@
 ### Wersja 2.0.0 RC6.0
 
 - **Limity API**  
-  - Na środowisku **TE** (testowe) włączono i zdefiniowano politykę [limitów api](limity/limity-api.md) z wartościami 10x wyższymi niż na **PRD**; szczegóły: ["Limity na środowiskach"](/limity/limity-api.md#limity-na-środowiskach).
-  - Na środowisku **TR** (DEMO) włączono [limity api](limity/limity-api.md) z wartościami identycznymi jak na **PRD**. Wartości są replikowane z produkcji; szczegóły: ["Limity na środowiskach"](/limity/limity-api.md#limity-na-środowiskach).
+  - Na środowisku **TE** (testowe) włączono i zdefiniowano politykę [limitów api](limity/limity-api.md) z wartościami 10x wyższymi niż na **PROD**; szczegóły: ["Limity na środowiskach"](/limity/limity-api.md#limity-na-środowiskach).
+  - Na środowisku **TR** (DEMO) włączono [limity api](limity/limity-api.md) z wartościami identycznymi jak na **PROD**. Wartości są replikowane z produkcji; szczegóły: ["Limity na środowiskach"](/limity/limity-api.md#limity-na-środowiskach).
   - Dodano endpoint POST `/testdata/rate-limits/production` - ustawia w bieżącym kontekście wartości limitów api zgodne z profilem produkcyjnym. Dostępny tylko na środowisku **TE**.
   
 - **Eksport paczki faktur (POST `/invoices/exports`). Pobranie listy metadanych faktur (POST `/invoices/query/metadata`)**   
@@ -426,7 +426,7 @@
     - `TE`: Ministerstwo Finansów - środowisko testowe (TE),
     - `TR`: Ministerstwo Finansów - środowisko przedprodukcyjne (TR).
     
-    `PRD`: bez zmian - Ministerstwo Finansów.  
+    `PROD`: bez zmian - Ministerstwo Finansów.  
   - Obecnie domyślnie zwracane jest UPO v4-2. Aby otrzymać UPO v4-3, należy dodać nagłówek: `X-KSeF-Feature: upo-v4-3` przy otwieraniu sesji (online/wsadowej).
   - Od `2025-12-22` domyślną wersją będzie UPO v4-3.
   - XSD UPO v4-3: [schema](/faktury/upo/schemy/upo-v4-3.xsd).

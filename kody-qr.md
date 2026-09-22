@@ -18,7 +18,7 @@ Poniżej zestawiono adresy URL dla poszczególnych środowisk KSeF używanych do
 |-----------|-----------------------------------|-----------------------------------------------|
 | **TE**    | Testowe <br/> (Release Candidate) | https://qr-test.ksef.mf.gov.pl                |
 | **DEMO**  | Przedprodukcyjne (Demo/Preprod)   | https://qr-demo.ksef.mf.gov.pl                |
-| **PRD**   | Produkcyjne                       | https://qr.ksef.mf.gov.pl                     |
+| **PROD**  | Produkcyjne                       | https://qr.ksef.mf.gov.pl                     |
 
 > **Uwaga**: Poniższe przykłady są przygotowane dla środowiska testowego (TE). Dla pozostałych środowisk należy wykonać analogicznie, używając odpowiedniego adresu URL z powyższej tabeli.
 

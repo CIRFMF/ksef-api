@@ -79,15 +79,15 @@ Z tego względu limity mają charakter dynamiczny i mogą być dostosowywane w z
 Na środowisku TE limity zostały skonfigurowane tak, aby umożliwić swobodną pracę integratorów i testowanie integracji bez ryzyka blokad. Domyślne wartości limitów są **dziesięciokrotnie wyższe** niż na produkcji, co pozwala na intensywne testy.
 Dodatkowo, dzięki udostępnionym endpointom można symulować różne scenariusze:
 
-* [POST /testdata/rate-limits/production](https://api-test.ksef.mf.gov.pl/docs/v2/index.html#tag/Limity-i-ograniczenia/paths/~1testdata~1rate-limits~1production/post) - aktywuje limity takie jak na produkcji (PRD),
+* [POST /testdata/rate-limits/production](https://api-test.ksef.mf.gov.pl/docs/v2/index.html#tag/Limity-i-ograniczenia/paths/~1testdata~1rate-limits~1production/post) - aktywuje limity takie jak na produkcji (PROD),
 * [POST /testdata/rate-limits](https://api-test.ksef.mf.gov.pl/docs/v2/index.html#tag/Limity-i-ograniczenia/paths/~1testdata~1rate-limits/post) - pozwala ustawić własne wartości,
 * [DELETE /testdata/rate-limits](https://api-test.ksef.mf.gov.pl/docs/v2/index.html#tag/Limity-i-ograniczenia/paths/~1testdata~1rate-limits/delete) - przywraca domyślne limity środowiska TE.
 
 **Środowisko DEMO (preprodukcyjne)**
-Na środowisku DEMO obowiązują **takie same limity jak na produkcji** dla danego kontekstu. Wartości te są **replikowane z PRD** i służą do końcowej walidacji wydajności oraz stabilności integracji przed wdrożeniem produkcyjnym.
+Na środowisku DEMO obowiązują **takie same limity jak na produkcji** dla danego kontekstu. Wartości te są **replikowane z PROD** i służą do końcowej walidacji wydajności oraz stabilności integracji przed wdrożeniem produkcyjnym.
 
-**Środowisko PRD (produkcyjne)**
-Na środowisku PRD stosowane są **domyślne limity** określone w niniejszej dokumentacji.
+**Środowisko PROD (produkcyjne)**
+Na środowisku `PROD` stosowane są **domyślne limity** określone w niniejszej dokumentacji.
 W przypadkach uzasadnionych - np. dużej skali przetwarzania faktur - przewidziana jest możliwość **złożenia wniosku o podniesienie limitów** za pośrednictwem dedykowanego formularza (w przygotowaniu).  
 
 ## Pobieranie faktur - limity
