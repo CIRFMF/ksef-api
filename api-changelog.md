@@ -7,8 +7,9 @@
 | **DEMO**   |     22.09.2026 |
 | **PROD**   |     23.09.2026 |
 
-- **Generowanie identyfikatora zbiorczego (POST `/collective-identifiers`)**  
-  Rozszerzono obsługę błędów przy generowaniu IZ: doprecyzowano kod `71001` oraz dodano kody `71004` dla faktur różnych sprzedawców i `71005` dla powtórzonego numeru KSeF w żądaniu.
+- **Identyfikatory zbiorcze**  
+  - Rozszerzono obsługę błędów przy generowaniu IZ (POST `/collective-identifiers`): doprecyzowano kod `71001` oraz dodano kody `71004` dla faktur różnych sprzedawców i `71005` dla powtórzonego numeru KSeF w żądaniu.
+  - Uzupełniono obsługę błędów w endpointach GET `/collective-identifiers/ksef/{ksefNumber}`, POST /`collective-identifiers/query` oraz POST `/collective-identifiers/invoices` o kod `21418` ("Przesłany token kontynuacji jest nieprawidłowy").
 
 - **Uprawnienia**  
   - Rozszerzono POST `/permissions/entities/grants` oraz POST `/permissions/indirect/grants` o możliwość nadawania uprawnienia `CollectiveIdentifierManage`.
