@@ -1,5 +1,17 @@
 ## Zmiany w API 2.0
 
+### Wersja 2.8.1
+| Środowisko | Data wdrożenia |
+| ---------- | -------------: |
+| **TEST**   |     22.09.2026 |
+| **DEMO**   |     22.09.2026 |
+| **PROD**   |     23.09.2026 |
+
+- **Generowanie identyfikatora zbiorczego (POST `/collective-identifiers`)**  
+  Rozszerzono obsługę błędów przy generowaniu IZ: doprecyzowano kod `71001` oraz dodano kody `71004` dla faktur różnych sprzedawców i `71005` dla powtórzonego numeru KSeF w żądaniu.
+
+
+
 ### Wersja 2.8.0
 | Środowisko | Data wdrożenia |
 | ---------- | -------------: |
