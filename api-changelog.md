@@ -10,7 +10,9 @@
 - **Generowanie identyfikatora zbiorczego (POST `/collective-identifiers`)**  
   Rozszerzono obsługę błędów przy generowaniu IZ: doprecyzowano kod `71001` oraz dodano kody `71004` dla faktur różnych sprzedawców i `71005` dla powtórzonego numeru KSeF w żądaniu.
 
-
+- **Uprawnienia**  
+  - Rozszerzono POST `/permissions/entities/grants` oraz POST `/permissions/indirect/grants` o możliwość nadawania uprawnienia `CollectiveIdentifierManage`.
+  - Rozszerzono odpowiedź POST `/permissions/query/entities/grants` o wartość `CollectiveIdentifierManage` w `permissionScope`.
 
 ### Wersja 2.8.0
 | Środowisko | Data wdrożenia |
