@@ -8228,7 +8228,7 @@
           "Uzyskiwanie dostępu"
         ],
         "summary": "Uwierzytelnienie z wykorzystaniem tokena KSeF",
-        "description": "Rozpoczyna operację uwierzytelniania z wykorzystaniem wcześniej wygenerowanego tokena KSeF.\n\nToken KSeF wraz z timestampem ze wcześniej wygenerowanego challenge'a (w formacie ```token|timestamp```) powinien zostać zaszyfrowany dedykowanym do tego celu kluczem publicznym.\n- Timestamp powinien zostać przekazany jako **liczba milisekund od 1 stycznia 1970 roku (Unix timestamp)**.\n- Algorytm szyfrowania: **RSA-OAEP (z użyciem SHA-256 jako funkcji skrótu)**.\n\n**Headers:**\n\n`X-Error-Format: problem-details` - ustawienie tego nagłówka powoduje zwracanie błędów w formacie **Problem Details** (`application/problem+json`).",
+        "description": "Rozpoczyna operację uwierzytelniania z wykorzystaniem wcześniej wygenerowanego tokena KSeF.\n\nToken KSeF wraz z timestampem ze wcześniej wygenerowanego challenge'a (w formacie ```token|timestampMs```) powinien zostać zaszyfrowany dedykowanym do tego celu kluczem publicznym.\n- Timestamp powinien zostać przekazany jako **liczba milisekund od 1 stycznia 1970 roku (Unix timestamp)**.\n- Algorytm szyfrowania: **RSA-OAEP (z użyciem SHA-256 jako funkcji skrótu)**.\n\n**Headers:**\n\n`X-Error-Format: problem-details` - ustawienie tego nagłówka powoduje zwracanie błędów w formacie **Problem Details** (`application/problem+json`).",
         "requestBody": {
           "content": {
             "application/json": {
@@ -11132,7 +11132,7 @@
           },
           "timestampMs": {
             "type": "integer",
-            "description": "Czas wygenerowania challenge-a w milisekundach od 1 stycznia 1970 roku (Unix timestamp).",
+            "description": "Czas wygenerowania challenge-a w milisekundach od 1 stycznia 1970 roku (Unix timestamp). Potrzebny do zbudowania `encryptedToken`.",
             "format": "int64"
           },
           "clientIp": {
@@ -14684,7 +14684,7 @@
           },
           "encryptedToken": {
             "type": "string",
-            "description": "Zaszyfrowany token wraz z timestampem z challenge'a, w postaci `token|timestamp`, zakodowany w formacie Base64.",
+            "description": "Zaszyfrowany token wraz z timestampem z challenge'a, w postaci `token|timestampMs`, zakodowany w formacie Base64.",
             "format": "byte"
           },
           "publicKeyId": {
