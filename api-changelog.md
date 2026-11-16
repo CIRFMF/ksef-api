@@ -28,6 +28,12 @@
   - Dotychczasowe endpointy GET `/auth/{referenceNumber}` oraz GET `/auth/sessions` pozostaną dostępne i wspierane do **15 czerwca 2027 r.** Zapowiedziane wcześniej usunięcie właściwości `authenticationMethod` w dniu 16 listopada 2026 r. nie nastąpi. Przed zakończeniem okresu wsparcia należy dostosować integracje do nowych rewizji operacji.
   - Pobranie statusu uwierzytelniania: dodano kod statusu `450` dla próby uwierzytelnienia tokenem KSeF rev2 poza okresem ważności, ze szczegółem "Token poza okresem ważności".
 
+- **Uprawnienia**  
+  Dodano obsługę uprawnienia `CollectiveIdentifierManage` (zarządzanie identyfikatorami zbiorczymi) w operacjach:
+  - nadawania uprawnień administratora podmiotu unijnego (POST `/permissions/eu-entities/administration/grants`),
+  - nadawania uprawnień reprezentanta podmiotu unijnego (POST `/permissions/eu-entities/grants`),
+  - wyszukiwania nadanych uprawnień (POST `/permissions/query/eu-entities/grants`). 
+
 - **OpenAPI**
   - Dodano do odpowiedzi wycofywanych endpointów nagłówki `Deprecation` i `Sunset`, wskazujące odpowiednio moment oznaczenia operacji jako przestarzałej oraz moment jej wyłączenia. Po wyłączeniu operacja będzie zwracać `410 Gone`.
   - Poprawiono przykłady odpowiedzi GET `/auth/{referenceNumber}`: błędy certyfikatów mają kod `460` zamiast `400`.
