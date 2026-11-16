@@ -8593,12 +8593,12 @@
                       }
                     }
                   },
-                  "Kod 400 | Uwierzytelnianie zakończone niepowodzeniem | Nieważny certyfikat": {
+                  "Kod 460 | Uwierzytelnianie zakończone niepowodzeniem | Nieważny certyfikat": {
                     "value": {
                       "startDate": "0001-01-01T00:00:00+00:00",
                       "authenticationMethod": "Token",
                       "status": {
-                        "code": 400,
+                        "code": 460,
                         "description": "Uwierzytelnianie zakończone niepowodzeniem",
                         "details": [
                           "Nieważny certyfikat."
@@ -8606,12 +8606,12 @@
                       }
                     }
                   },
-                  "Kod 400 | Uwierzytelnianie zakończone niepowodzeniem | Błąd weryfikacji łańcucha certyfikatów": {
+                  "Kod 460 | Uwierzytelnianie zakończone niepowodzeniem | Błąd weryfikacji łańcucha certyfikatów": {
                     "value": {
                       "startDate": "0001-01-01T00:00:00+00:00",
                       "authenticationMethod": "Token",
                       "status": {
-                        "code": 400,
+                        "code": 460,
                         "description": "Uwierzytelnianie zakończone niepowodzeniem",
                         "details": [
                           "Błąd weryfikacji łańcucha certyfikatów."
@@ -8619,12 +8619,12 @@
                       }
                     }
                   },
-                  "Kod 400 | Uwierzytelnianie zakończone niepowodzeniem | Niezaufany łańcuch certyfikatów": {
+                  "Kod 460 | Uwierzytelnianie zakończone niepowodzeniem | Niezaufany łańcuch certyfikatów": {
                     "value": {
                       "startDate": "0001-01-01T00:00:00+00:00",
                       "authenticationMethod": "Token",
                       "status": {
-                        "code": 400,
+                        "code": 460,
                         "description": "Uwierzytelnianie zakończone niepowodzeniem",
                         "details": [
                           "Niezaufany łańcuch certyfikatów."
@@ -8632,12 +8632,12 @@
                       }
                     }
                   },
-                  "Kod 400 | Uwierzytelnianie zakończone niepowodzeniem | Certyfikat odwołany": {
+                  "Kod 460 | Uwierzytelnianie zakończone niepowodzeniem | Certyfikat odwołany": {
                     "value": {
                       "startDate": "0001-01-01T00:00:00+00:00",
                       "authenticationMethod": "Token",
                       "status": {
-                        "code": 400,
+                        "code": 460,
                         "description": "Uwierzytelnianie zakończone niepowodzeniem",
                         "details": [
                           "Certyfikat odwołany."
@@ -8645,12 +8645,12 @@
                       }
                     }
                   },
-                  "Kod 400 | Uwierzytelnianie zakończone niepowodzeniem | Niepoprawny certyfikat": {
+                  "Kod 460 | Uwierzytelnianie zakończone niepowodzeniem | Niepoprawny certyfikat": {
                     "value": {
                       "startDate": "0001-01-01T00:00:00+00:00",
                       "authenticationMethod": "Token",
                       "status": {
-                        "code": 400,
+                        "code": 460,
                         "description": "Uwierzytelnianie zakończone niepowodzeniem",
                         "details": [
                           "Niepoprawny certyfikat."

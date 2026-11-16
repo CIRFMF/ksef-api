@@ -16,6 +16,7 @@
 
 - **OpenAPI**
   - Dodano do odpowiedzi wycofywanych endpointów nagłówki `Deprecation` i `Sunset`, wskazujące odpowiednio moment oznaczenia operacji jako przestarzałej oraz moment jej wyłączenia. Po wyłączeniu operacja będzie zwracać `410 Gone`.
+  - Poprawiono przykłady odpowiedzi GET `/auth/{referenceNumber}`: błędy certyfikatów mają kod `460` zamiast `400`.
 
 ### Wersja 2.9.0
 | Środowisko | Data wdrożenia |
