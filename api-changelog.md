@@ -1,5 +1,22 @@
 ## Zmiany w API 2.0
 
+### Wersja 2.10.0
+| Środowisko | Data wdrożenia |
+| ---------- | -------------: |
+| **TEST**   |     16.11.2026 |
+| **DEMO**   |     - |
+| **PROD**   |     - |
+
+- **Uwierzytelnianie**
+  - Zmieniono sposób realizacji zapowiedzianego w wersji 2.1.0 wycofania właściwości `authenticationMethod`. Właściwość pozostanie dostępna w dotychczasowych endpointach, natomiast nowe rewizje operacji nie będą jej zawierać:
+    - **Pobranie statusu uwierzytelniania (GET `/auth/rev2/{referenceNumber}`)**,
+    - **Pobranie listy aktywnych sesji (GET `/auth/sessions/rev2`)**.
+  - W nowych rewizjach informacje o metodzie uwierzytelniania są udostępniane we właściwości `authenticationMethodInfo`.
+  - Dotychczasowe endpointy GET `/auth/{referenceNumber}` oraz GET `/auth/sessions` pozostaną dostępne i wspierane do **15 czerwca 2027 r.** Zapowiedziane wcześniej usunięcie właściwości `authenticationMethod` w dniu 16 listopada 2026 r. nie nastąpi. Przed zakończeniem okresu wsparcia należy dostosować integracje do nowych rewizji operacji.
+
+- **OpenAPI**
+  - Dodano do odpowiedzi wycofywanych endpointów nagłówki `Deprecation` i `Sunset`, wskazujące odpowiednio moment oznaczenia operacji jako przestarzałej oraz moment jej wyłączenia. Po wyłączeniu operacja będzie zwracać `410 Gone`.
+
 ### Wersja 2.9.0
 | Środowisko | Data wdrożenia |
 | ---------- | -------------: |

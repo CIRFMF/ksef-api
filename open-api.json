@@ -18,6 +18,204 @@
           "Aktywne sesje"
         ],
         "summary": "Pobranie listy aktywnych sesji",
+        "description": "**Wycofanie:** operacja jest przestarzała i zostanie wycofana 15.06.2027. Zastępuje ją nowa rewizja: [`GET /auth/sessions/rev2`](/docs/v2/index.html#tag/Aktywne-sesje/paths/~1auth~1sessions~1rev2/get).\n\nZwraca listę aktywnych sesji uwierzytelnienia.\n\n**Headers:**\n\n`X-Error-Format: problem-details` - ustawienie tego nagłówka powoduje zwracanie błędów w formacie **Problem Details** (`application/problem+json`).\n\n**Sortowanie:**\n\n- startDate (Desc)\n\n",
+        "parameters": [
+          {
+            "name": "x-continuation-token",
+            "in": "header",
+            "description": "Token służący do pobrania kolejnej strony wyników.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "Rozmiar strony wyników.",
+            "schema": {
+              "maximum": 100,
+              "minimum": 10,
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-System-Warning": {
+                "schema": {
+                  "$ref": "#/components/schemas/SystemWarning"
+                }
+              },
+              "Deprecation": {
+                "description": "Moment, od którego operacja jest przestarzała (RFC 9745), w formacie `@<unix-timestamp>`.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Sunset": {
+                "description": "Moment wyłączenia operacji (RFC 8594), w formacie HTTP-date. Od tego momentu operacja zwraca `410 Gone`.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationListResponse"
+                },
+                "example": {
+                  "continuationToken": "W3siY29tcG9zaXRlVG9rZW4iOnsidG9rZW4iOm51bGwsInJhbmdlIjp7Im1pbiI6IjA1QzFFMCIsIm1heCI6IkZGIn19LCJyZXN1bWVWYWx1ZXMiOlsiMjAyNS0xMC0wM1QxMjoxODo0OS4zNDY2ODQ3WiJdLCJyaWQiOiIzeHd0QVBJWDVRRlVoZ0FBQUFBQUJBPT0iLCJza2lwQ291bnQiOjF9XQ==",
+                  "items": [
+                    {
+                      "referenceNumber": "20251010-AU-19F5E39000-39B5B182BA-B8",
+                      "isCurrent": false,
+                      "startDate": "2025-10-11T12:23:56.0154302+00:00",
+                      "authenticationMethod": "QualifiedSeal",
+                      "authenticationMethodInfo": {
+                        "category": "XadesSignature",
+                        "code": "xades.qualified-seal",
+                        "displayName": "Pieczęć kwalifikowana"
+                      },
+                      "status": {
+                        "code": 200,
+                        "description": "Uwierzytelnianie zakończone sukcesem"
+                      },
+                      "isTokenRedeemed": true,
+                      "refreshTokenValidUntil": "2025-11-28T09:22:13.388+00:00"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "| ExceptionCode       | ExceptionDescription                                | Details                                                     | \n|---------------------|-----------------------------------------------------|-------------------------------------------------------------|\n| 21001               | Nieczytelna treść.                                  | {szczegółowy opis błędu}                                    |\n| 21418               | Przekazany token kontynuacji ma nieprawidłowy format. |                                                           |\n| 21405 | Błąd walidacji danych wejściowych. | {treść błędu z walidatora} |",
+            "headers": {
+              "Deprecation": {
+                "description": "Moment, od którego operacja jest przestarzała (RFC 9745), w formacie `@<unix-timestamp>`.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Sunset": {
+                "description": "Moment wyłączenia operacji (RFC 8594), w formacie HTTP-date. Od tego momentu operacja zwraca `410 Gone`.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestProblemDetails"
+                }
+              }
+            },
+            "x-summary": "Bad Request"
+          },
+          "429": {
+            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "headers": {
+              "Retry-After": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetryAfter"
+                }
+              },
+              "Deprecation": {
+                "description": "Moment, od którego operacja jest przestarzała (RFC 9745), w formacie `@<unix-timestamp>`.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Sunset": {
+                "description": "Moment wyłączenia operacji (RFC 8594), w formacie HTTP-date. Od tego momentu operacja zwraca `410 Gone`.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsProblemDetails"
+                }
+              }
+            },
+            "x-summary": "Too Many Requests"
+          },
+          "410": {
+            "description": "Gone",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoneProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true,
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ],
+        "x-rate-limits": {
+          "perSecond": 10,
+          "perMinute": 30,
+          "perHour": 120
+        },
+        "x-sort": [
+          {
+            "field": "startDate",
+            "direction": "Desc"
+          }
+        ],
+        "x-sunset": "2027-06-15",
+        "x-successor": "GET /auth/sessions/rev2"
+      }
+    },
+    "/auth/sessions/rev2": {
+      "get": {
+        "tags": [
+          "Aktywne sesje"
+        ],
+        "summary": "Pobranie listy aktywnych sesji (rev2)",
         "description": "Zwraca listę aktywnych sesji uwierzytelnienia.\n\n**Headers:**\n\n`X-Error-Format: problem-details` - ustawienie tego nagłówka powoduje zwracanie błędów w formacie **Problem Details** (`application/problem+json`).\n\n**Sortowanie:**\n\n- startDate (Desc)\n\n",
         "parameters": [
           {
@@ -54,7 +252,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AuthenticationListResponse"
+                  "$ref": "#/components/schemas/AuthenticationListResponseRev2"
                 },
                 "example": {
                   "continuationToken": "W3siY29tcG9zaXRlVG9rZW4iOnsidG9rZW4iOm51bGwsInJhbmdlIjp7Im1pbiI6IjA1QzFFMCIsIm1heCI6IkZGIn19LCJyZXN1bWVWYWx1ZXMiOlsiMjAyNS0xMC0wM1QxMjoxODo0OS4zNDY2ODQ3WiJdLCJyaWQiOiIzeHd0QVBJWDVRRlVoZ0FBQUFBQUJBPT0iLCJza2lwQ291bnQiOjF9XQ==",
@@ -63,9 +261,12 @@
                       "referenceNumber": "20251010-AU-19F5E39000-39B5B182BA-B8",
                       "isCurrent": false,
                       "startDate": "2025-10-11T12:23:56.0154302+00:00",
-                      "authenticationMethod": "QualifiedSeal",
                       "authenticationMethodInfo": {
-                        "category": "XadesSignature",
+                        "category": {
+                          "code": "XadesSignature",
+                          "rawCode": "XadesSignature",
+                          "displayName": "Podpis XAdES"
+                        },
                         "code": "xades.qualified-seal",
                         "displayName": "Pieczęć kwalifikowana"
                       },
@@ -82,7 +283,7 @@
             }
           },
           "400": {
-            "description": "| ExceptionCode       | ExceptionDescription                                | Details                                                     | \n|---------------------|-----------------------------------------------------|-------------------------------------------------------------|\n| 21001               | Nieczytelna treść.                                  | {szczegółowy opis błędu}                                    |\n| 21418               | Przekazany token kontynuacji ma nieprawidłowy format. |                                                           |\n| 21405 | Błąd walidacji danych wejściowych. | {treść błędu z walidatora} |",
+            "description": "| ExceptionCode       | ExceptionDescription                                | Details                                                     | \n|---------------------|-----------------------------------------------------|-------------------------------------------------------------|\n| 21001               | Nieczytelna treść.                                                           | {szczegółowy opis błędu}                            |\n| 21418               | Przekazany token kontynuacji ma nieprawidłowy format. |   |\n| 21405 | Błąd walidacji danych wejściowych. | {treść błędu z walidatora} |",
             "content": {
               "application/json": {
                 "schema": {
@@ -8332,7 +8533,7 @@
           "Uzyskiwanie dostępu"
         ],
         "summary": "Pobranie statusu uwierzytelniania",
-        "description": "Sprawdza bieżący status operacji uwierzytelniania dla podanego tokena.\n\nSposób uwierzytelnienia: `AuthenticationToken` otrzymany przy rozpoczęciu operacji uwierzytelniania.\nOperacja jest dostępna przez 7 dni.\n\n**Headers:**\n\n`X-Error-Format: problem-details` - ustawienie tego nagłówka powoduje zwracanie błędów w formacie **Problem Details** (`application/problem+json`).",
+        "description": "**Wycofanie:** operacja jest przestarzała i zostanie wycofana 15.06.2027. Zastępuje ją nowa rewizja: [`GET /auth/rev2/{referenceNumber}`](/docs/v2/index.html#tag/Uzyskiwanie-dostepu/paths/~1auth~1rev2~1%7BreferenceNumber%7D/get).\n\nSprawdza bieżący status operacji uwierzytelniania dla podanego tokena.\n\nSposób uwierzytelnienia: `AuthenticationToken` otrzymany przy rozpoczęciu operacji uwierzytelniania.\nOperacja jest dostępna przez 7 dni.\n\n**Headers:**\n\n`X-Error-Format: problem-details` - ustawienie tego nagłówka powoduje zwracanie błędów w formacie **Problem Details** (`application/problem+json`).",
         "parameters": [
           {
             "name": "referenceNumber",
@@ -8351,6 +8552,18 @@
               "X-System-Warning": {
                 "schema": {
                   "$ref": "#/components/schemas/SystemWarning"
+                }
+              },
+              "Deprecation": {
+                "description": "Moment, od którego operacja jest przestarzała (RFC 9745), w formacie `@<unix-timestamp>`.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Sunset": {
+                "description": "Moment wyłączenia operacji (RFC 8594), w formacie HTTP-date. Od tego momentu operacja zwraca `410 Gone`.",
+                "schema": {
+                  "type": "string"
                 }
               }
             },
@@ -8449,6 +8662,325 @@
                     "value": {
                       "startDate": "0001-01-01T00:00:00+00:00",
                       "authenticationMethod": "Token",
+                      "status": {
+                        "code": 500,
+                        "description": "Nieznany błąd ({statusCode})"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "Gone",
+            "headers": {
+              "Deprecation": {
+                "description": "Moment, od którego operacja jest przestarzała (RFC 9745), w formacie `@<unix-timestamp>`.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Sunset": {
+                "description": "Moment wyłączenia operacji (RFC 8594), w formacie HTTP-date. Od tego momentu operacja zwraca `410 Gone`.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoneProblemDetails"
+                },
+                "example": {
+                  "title": "Gone",
+                  "status": 410,
+                  "instance": "{{uri_path}}",
+                  "detail": "Operacja wygasła i nie jest już dostępna.",
+                  "timestamp": "2025-07-11T12:23:56.0154302+00:00",
+                  "traceId": "673843e023c432286660bc0501a3af44"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "| ExceptionCode       | ExceptionDescription                           | Details                                                                     | \n|---------------------|------------------------------------------------|-----------------------------------------------------------------------------|\n| 21304               | Brak uwierzytelnienia.                         | Operacja uwierzytelniania o numerze referencyjnym {referenceNumber} nie została znaleziona. |",
+            "headers": {
+              "Deprecation": {
+                "description": "Moment, od którego operacja jest przestarzała (RFC 9745), w formacie `@<unix-timestamp>`.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Sunset": {
+                "description": "Moment wyłączenia operacji (RFC 8594), w formacie HTTP-date. Od tego momentu operacja zwraca `410 Gone`.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionResponse"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestProblemDetails"
+                }
+              }
+            },
+            "x-summary": "Bad Request"
+          },
+          "429": {
+            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "headers": {
+              "Retry-After": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetryAfter"
+                }
+              },
+              "Deprecation": {
+                "description": "Moment, od którego operacja jest przestarzała (RFC 9745), w formacie `@<unix-timestamp>`.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Sunset": {
+                "description": "Moment wyłączenia operacji (RFC 8594), w formacie HTTP-date. Od tego momentu operacja zwraca `410 Gone`.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsResponse"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequestsProblemDetails"
+                }
+              }
+            },
+            "x-summary": "Too Many Requests"
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForbiddenProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true,
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ],
+        "x-rate-limits": {
+          "perSecond": 60
+        },
+        "x-sunset": "2027-06-15",
+        "x-successor": "GET /auth/rev2/{referenceNumber}"
+      }
+    },
+    "/auth/rev2/{referenceNumber}": {
+      "get": {
+        "tags": [
+          "Uzyskiwanie dostępu"
+        ],
+        "summary": "Pobranie statusu uwierzytelniania (rev2)",
+        "description": "Sprawdza bieżący status operacji uwierzytelniania dla podanego tokena.\n\nSposób uwierzytelnienia: `AuthenticationToken` otrzymany przy rozpoczęciu operacji uwierzytelniania.\nOperacja jest dostępna przez 7 dni.\n\n**Headers:**\n\n`X-Error-Format: problem-details` - ustawienie tego nagłówka powoduje zwracanie błędów w formacie **Problem Details** (`application/problem+json`).",
+        "parameters": [
+          {
+            "name": "referenceNumber",
+            "in": "path",
+            "description": "Numer referencyjny tokena otrzymanego przy inicjalizacji operacji uwierzytelniania.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/ReferenceNumber"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-System-Warning": {
+                "schema": {
+                  "$ref": "#/components/schemas/SystemWarning"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationOperationStatusResponseRev2"
+                },
+                "examples": {
+                  "Kod 100 | Uwierzytelnianie w toku": {
+                    "value": {
+                      "startDate": "2025-10-11T12:23:56.0154302+00:00",
+                      "authenticationMethodInfo": {
+                        "category": {
+                          "code": "XadesSignature",
+                          "rawCode": "XadesSignature",
+                          "displayName": "Podpis XAdES"
+                        },
+                        "code": "xades.qualified-seal",
+                        "displayName": "Pieczęć kwalifikowana"
+                      },
+                      "status": {
+                        "code": 100,
+                        "description": "Uwierzytelnianie w toku"
+                      }
+                    }
+                  },
+                  "Kod 200 | Uwierzytelnianie zakończone sukcesem": {
+                    "value": {
+                      "startDate": "2025-10-11T12:23:56.0154302+00:00",
+                      "authenticationMethodInfo": {
+                        "category": {
+                          "code": "XadesSignature",
+                          "rawCode": "XadesSignature",
+                          "displayName": "Podpis XAdES"
+                        },
+                        "code": "xades.qualified-seal",
+                        "displayName": "Pieczęć kwalifikowana"
+                      },
+                      "status": {
+                        "code": 200,
+                        "description": "Uwierzytelnianie zakończone sukcesem"
+                      }
+                    }
+                  },
+                  "Kod 460 | Uwierzytelnianie zakończone niepowodzeniem | Nieważny certyfikat": {
+                    "value": {
+                      "startDate": "2025-10-11T12:23:56.0154302+00:00",
+                      "authenticationMethodInfo": {
+                        "category": {
+                          "code": "XadesSignature",
+                          "rawCode": "XadesSignature",
+                          "displayName": "Podpis XAdES"
+                        },
+                        "code": "xades.qualified-seal",
+                        "displayName": "Pieczęć kwalifikowana"
+                      },
+                      "status": {
+                        "code": 460,
+                        "description": "Uwierzytelnianie zakończone niepowodzeniem",
+                        "details": [
+                          "Nieważny certyfikat."
+                        ]
+                      }
+                    }
+                  },
+                  "Kod 460 | Uwierzytelnianie zakończone niepowodzeniem | Błąd weryfikacji łańcucha certyfikatów": {
+                    "value": {
+                      "startDate": "2025-10-11T12:23:56.0154302+00:00",
+                      "authenticationMethodInfo": {
+                        "category": {
+                          "code": "XadesSignature",
+                          "rawCode": "XadesSignature",
+                          "displayName": "Podpis XAdES"
+                        },
+                        "code": "xades.qualified-seal",
+                        "displayName": "Pieczęć kwalifikowana"
+                      },
+                      "status": {
+                        "code": 460,
+                        "description": "Uwierzytelnianie zakończone niepowodzeniem",
+                        "details": [
+                          "Błąd weryfikacji łańcucha certyfikatów."
+                        ]
+                      }
+                    }
+                  },
+                  "Kod 460 | Uwierzytelnianie zakończone niepowodzeniem | Niezaufany łańcuch certyfikatów": {
+                    "value": {
+                      "startDate": "2025-10-11T12:23:56.0154302+00:00",
+                      "authenticationMethodInfo": {
+                        "category": {
+                          "code": "XadesSignature",
+                          "rawCode": "XadesSignature",
+                          "displayName": "Podpis XAdES"
+                        },
+                        "code": "xades.qualified-seal",
+                        "displayName": "Pieczęć kwalifikowana"
+                      },
+                      "status": {
+                        "code": 460,
+                        "description": "Uwierzytelnianie zakończone niepowodzeniem",
+                        "details": [
+                          "Niezaufany łańcuch certyfikatów."
+                        ]
+                      }
+                    }
+                  },
+                  "Kod 460 | Uwierzytelnianie zakończone niepowodzeniem | Certyfikat odwołany": {
+                    "value": {
+                      "startDate": "2025-10-11T12:23:56.0154302+00:00",
+                      "authenticationMethodInfo": {
+                        "category": {
+                          "code": "XadesSignature",
+                          "rawCode": "XadesSignature",
+                          "displayName": "Podpis XAdES"
+                        },
+                        "code": "xades.qualified-seal",
+                        "displayName": "Pieczęć kwalifikowana"
+                      },
+                      "status": {
+                        "code": 460,
+                        "description": "Uwierzytelnianie zakończone niepowodzeniem",
+                        "details": [
+                          "Certyfikat odwołany."
+                        ]
+                      }
+                    }
+                  },
+                  "Kod 460 | Uwierzytelnianie zakończone niepowodzeniem | Niepoprawny certyfikat": {
+                    "value": {
+                      "startDate": "2025-10-11T12:23:56.0154302+00:00",
+                      "authenticationMethodInfo": {
+                        "category": {
+                          "code": "XadesSignature",
+                          "rawCode": "XadesSignature",
+                          "displayName": "Podpis XAdES"
+                        },
+                        "code": "xades.qualified-seal",
+                        "displayName": "Pieczęć kwalifikowana"
+                      },
+                      "status": {
+                        "code": 460,
+                        "description": "Uwierzytelnianie zakończone niepowodzeniem",
+                        "details": [
+                          "Niepoprawny certyfikat."
+                        ]
+                      }
+                    }
+                  },
+                  "Kod 500 | Nieznany błąd": {
+                    "value": {
+                      "startDate": "2025-10-11T12:23:56.0154302+00:00",
                       "status": {
                         "code": 500,
                         "description": "Nieznany błąd ({statusCode})"
@@ -11277,6 +11809,73 @@
           }
         }
       },
+      "AuthenticationListItemRev2": {
+        "required": [
+          "authenticationMethodInfo",
+          "referenceNumber",
+          "startDate",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "startDate": {
+            "type": "string",
+            "description": "Data rozpoczęcia operacji uwierzytelnienia.",
+            "format": "date-time"
+          },
+          "authenticationMethodInfo": {
+            "required": [
+              "category",
+              "code",
+              "displayName"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AuthenticationMethodInfoRev2"
+              }
+            ],
+            "description": "Użyta metoda uwierzytelnienia."
+          },
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StatusInfo"
+              }
+            ],
+            "description": "Informacje o aktualnym statusie.\n| Code | Description | Details |\n| --- | --- | --- |\n| 100 | Uwierzytelnianie w toku | - |\n| 200 | Uwierzytelnianie zakończone sukcesem | - |\n| 415 | Uwierzytelnianie zakończone niepowodzeniem | Brak przypisanych uprawnień |\n| 425 | Uwierzytelnienie unieważnione  | Uwierzytelnienie i powiązane refresh tokeny zostały unieważnione przez użytkownika |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Nieprawidłowe wyzwanie autoryzacyjne |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Nieprawidłowy token |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Nieprawidłowy czas tokena |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Token unieważniony |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Token nieaktywny |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Token poza okresem ważności |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Nieprawidłowe szyfrowanie tokena |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Nieprawidłowe kodowanie tokena |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Token nie może być użyty w kontekście {contextIdentifier} |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Nieważny certyfikat |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Błąd weryfikacji łańcucha certyfikatów |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Niezaufany łańcuch certyfikatów |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Certyfikat odwołany |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Certyfikat zawieszony |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Niepoprawny certyfikat |\n| 470 | Uwierzytelnianie zakończone niepowodzeniem | Próba wykorzystania metod autoryzacyjnych osoby zmarłej |\n| 480 | Uwierzytelnienie zablokowane | Podejrzenie incydentu bezpieczeństwa. Skontaktuj się z Ministerstwem Finansów przez formularz zgłoszeniowy. |\n| 500 | Nieznany błąd | - |\n| 550 | Operacja została anulowana przez system | Przetwarzanie zostało przerwane z przyczyn wewnętrznych systemu. Spróbuj ponownie |"
+          },
+          "isTokenRedeemed": {
+            "type": "boolean",
+            "description": "Czy został już wydany refresh token powiązany z danym uwierzytelnieniem.",
+            "nullable": true
+          },
+          "lastTokenRefreshDate": {
+            "type": "string",
+            "description": "Data ostatniego odświeżenia tokena.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "refreshTokenValidUntil": {
+            "type": "string",
+            "description": "Termin ważności refresh tokena (o ile nie zostanie wcześniej unieważniony).",
+            "format": "date-time",
+            "nullable": true
+          },
+          "referenceNumber": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReferenceNumber"
+              }
+            ],
+            "description": "Numer referencyjny sesji uwierzytelnienia."
+          },
+          "isCurrent": {
+            "type": "boolean",
+            "description": "Czy sesja jest powiązana z aktualnie używanym tokenem.",
+            "readOnly": true
+          }
+        }
+      },
       "AuthenticationListResponse": {
         "required": [
           "items"
@@ -11292,6 +11891,26 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AuthenticationListItem"
+            },
+            "description": "Lista sesji uwierzytelniania."
+          }
+        }
+      },
+      "AuthenticationListResponseRev2": {
+        "required": [
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "continuationToken": {
+            "type": "string",
+            "description": "Token służący do pobrania kolejnej strony wyników. Jeśli jest pusty, to nie ma kolejnych stron.",
+            "nullable": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AuthenticationListItemRev2"
             },
             "description": "Lista sesji uwierzytelniania."
           }
@@ -11320,6 +11939,44 @@
         "type": "string",
         "description": "| Wartość | Opis |\n| --- | --- |\n| XadesSignature | Uwierzytelnienie podpisem Xades. |\n| NationalNode | Uwierzytelnienie za pomocą Węzła Krajowego (login.gov.pl). |\n| Token | Uwierzytelnienie tokenem. |\n| Other | Uwierzytelnienie inną metodą. |\n"
       },
+      "AuthenticationMethodCategoryRev2": {
+        "required": [
+          "code",
+          "displayName",
+          "rawCode"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AuthenticationMethodCategoryRev2Code"
+              }
+            ],
+            "description": "Kod wartości słownikowej.\n| Code | DisplayName | Opis |\n| --- | --- | --- |\n| XadesSignature | Podpis XAdES | Uwierzytelnienie podpisem XAdES. |\n| NationalNode | Węzeł Krajowy | Uwierzytelnienie za pomocą Węzła Krajowego. |\n| Token | Token | Uwierzytelnienie tokenem. |\n| FutureValue |  | Kategoria metody uwierzytelnienia nieznana w momencie wydania            bieżącej wersji modelu.            Rzeczywisty kod kategorii jest dostępny w polu `rawCode`,            a jej nazwa w polu `displayName`. |\n"
+          },
+          "rawCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Oryginalny kod wartości słownikowej."
+          },
+          "displayName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Nazwa przeznaczona do prezentacji użytkownikowi."
+          }
+        }
+      },
+      "AuthenticationMethodCategoryRev2Code": {
+        "enum": [
+          "XadesSignature",
+          "NationalNode",
+          "Token",
+          "FutureValue"
+        ],
+        "type": "string",
+        "description": "| Code | DisplayName | Opis |\n| --- | --- | --- |\n| XadesSignature | Podpis XAdES | Uwierzytelnienie podpisem XAdES. |\n| NationalNode | Węzeł Krajowy | Uwierzytelnienie za pomocą Węzła Krajowego. |\n| Token | Token | Uwierzytelnienie tokenem. |\n| FutureValue |  | Kategoria metody uwierzytelnienia nieznana w momencie wydania            bieżącej wersji modelu.            Rzeczywisty kod kategorii jest dostępny w polu `rawCode`,            a jej nazwa w polu `displayName`. |\n"
+      },
       "AuthenticationMethodInfo": {
         "required": [
           "category",
@@ -11344,6 +12001,32 @@
             "type": "string",
             "description": "Nazwa metody uwierzytelnienia do wyświetlenia użytkownikowi.",
             "readOnly": true
+          }
+        }
+      },
+      "AuthenticationMethodInfoRev2": {
+        "required": [
+          "category",
+          "code",
+          "displayName"
+        ],
+        "type": "object",
+        "properties": {
+          "category": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AuthenticationMethodCategoryRev2"
+              }
+            ],
+            "description": "Kategoria metody uwierzytelnienia."
+          },
+          "code": {
+            "type": "string",
+            "description": "Kod metody uwierzytelnienia."
+          },
+          "displayName": {
+            "type": "string",
+            "description": "Nazwa metody uwierzytelnienia do wyświetlenia użytkownikowi."
           }
         }
       },
@@ -11390,6 +12073,59 @@
               }
             ],
             "description": "Informacje o aktualnym statusie.\n| Code | Description | Details |\n| --- | --- | --- |\n| 100 | Uwierzytelnianie w toku | - |\n| 200 | Uwierzytelnianie zakończone sukcesem | - |\n| 415 | Uwierzytelnianie zakończone niepowodzeniem | Brak przypisanych uprawnień |\n| 425 | Uwierzytelnienie unieważnione  | Uwierzytelnienie i powiązane refresh tokeny zostały unieważnione przez użytkownika |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Nieprawidłowe wyzwanie autoryzacyjne |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Nieprawidłowy token |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Nieprawidłowy czas tokena |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Token unieważniony |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Token nieaktywny |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Nieprawidłowe szyfrowanie tokena |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Nieprawidłowe kodowanie tokena |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Token nie może być użyty w kontekście {contextIdentifier} |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Nieważny certyfikat |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Błąd weryfikacji łańcucha certyfikatów |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Niezaufany łańcuch certyfikatów |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Certyfikat odwołany |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Certyfikat zawieszony |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Niepoprawny certyfikat |\n| 470 | Uwierzytelnianie zakończone niepowodzeniem | Próba wykorzystania metod autoryzacyjnych osoby zmarłej |\n| 480 | Uwierzytelnienie zablokowane | Podejrzenie incydentu bezpieczeństwa. Skontaktuj się z Ministerstwem Finansów przez formularz zgłoszeniowy. |\n| 500 | Nieznany błąd | - |\n| 550 | Operacja została anulowana przez system | Przetwarzanie zostało przerwane z przyczyn wewnętrznych systemu. Spróbuj ponownie |"
+          },
+          "isTokenRedeemed": {
+            "type": "boolean",
+            "description": "Czy został już wydany refresh token powiązany z danym uwierzytelnieniem.",
+            "nullable": true
+          },
+          "lastTokenRefreshDate": {
+            "type": "string",
+            "description": "Data ostatniego odświeżenia tokena.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "refreshTokenValidUntil": {
+            "type": "string",
+            "description": "Termin ważności refresh tokena (o ile nie zostanie wcześniej unieważniony).",
+            "format": "date-time",
+            "nullable": true
+          }
+        }
+      },
+      "AuthenticationOperationStatusResponseRev2": {
+        "required": [
+          "authenticationMethodInfo",
+          "startDate",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "startDate": {
+            "type": "string",
+            "description": "Data rozpoczęcia operacji uwierzytelnienia.",
+            "format": "date-time"
+          },
+          "authenticationMethodInfo": {
+            "required": [
+              "category",
+              "code",
+              "displayName"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AuthenticationMethodInfoRev2"
+              }
+            ],
+            "description": "Użyta metoda uwierzytelnienia."
+          },
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StatusInfo"
+              }
+            ],
+            "description": "Informacje o aktualnym statusie.\n| Code | Description | Details |\n| --- | --- | --- |\n| 100 | Uwierzytelnianie w toku | - |\n| 200 | Uwierzytelnianie zakończone sukcesem | - |\n| 415 | Uwierzytelnianie zakończone niepowodzeniem | Brak przypisanych uprawnień |\n| 425 | Uwierzytelnienie unieważnione  | Uwierzytelnienie i powiązane refresh tokeny zostały unieważnione przez użytkownika |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Nieprawidłowe wyzwanie autoryzacyjne |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Nieprawidłowy token |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Nieprawidłowy czas tokena |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Token unieważniony |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Token nieaktywny |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Token poza okresem ważności |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Nieprawidłowe szyfrowanie tokena |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Nieprawidłowe kodowanie tokena |\n| 450 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędnego tokenu | Token nie może być użyty w kontekście {contextIdentifier} |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Nieważny certyfikat |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Błąd weryfikacji łańcucha certyfikatów |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Niezaufany łańcuch certyfikatów |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Certyfikat odwołany |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Certyfikat zawieszony |\n| 460 | Uwierzytelnianie zakończone niepowodzeniem z powodu błędu certyfikatu | Niepoprawny certyfikat |\n| 470 | Uwierzytelnianie zakończone niepowodzeniem | Próba wykorzystania metod autoryzacyjnych osoby zmarłej |\n| 480 | Uwierzytelnienie zablokowane | Podejrzenie incydentu bezpieczeństwa. Skontaktuj się z Ministerstwem Finansów przez formularz zgłoszeniowy. |\n| 500 | Nieznany błąd | - |\n| 550 | Operacja została anulowana przez system | Przetwarzanie zostało przerwane z przyczyn wewnętrznych systemu. Spróbuj ponownie |"
           },
           "isTokenRedeemed": {
             "type": "boolean",
