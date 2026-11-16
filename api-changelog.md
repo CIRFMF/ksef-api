@@ -38,6 +38,9 @@
   - Dodano do odpowiedzi wycofywanych endpointów nagłówki `Deprecation` i `Sunset`, wskazujące odpowiednio moment oznaczenia operacji jako przestarzałej oraz moment jej wyłączenia. Po wyłączeniu operacja będzie zwracać `410 Gone`.
   - Poprawiono przykłady odpowiedzi GET `/auth/{referenceNumber}`: błędy certyfikatów mają kod `460` zamiast `400`.
 
+- **Dane testowe**  
+  W żądaniu POST `/testdata/limits/subject/certificate` oznaczono właściwość `enrollment.maxEnrollments` i `certificate.maxCertificates` jako wymagane.
+
 ### Wersja 2.9.0
 | Środowisko | Data wdrożenia |
 | ---------- | -------------: |

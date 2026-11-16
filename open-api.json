@@ -13589,13 +13589,16 @@
         "type": "string"
       },
       "CertificateSubjectLimitsOverride": {
+        "required": [
+          "maxCertificates"
+        ],
         "type": "object",
         "properties": {
           "maxCertificates": {
             "minimum": 0,
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "description": "Maksymalna ilość aktywnych certyfikatów.",
+            "format": "int32"
           }
         }
       },
@@ -14599,13 +14602,16 @@
         }
       },
       "EnrollmentSubjectLimitsOverride": {
+        "required": [
+          "maxEnrollments"
+        ],
         "type": "object",
         "properties": {
           "maxEnrollments": {
             "minimum": 0,
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "description": "Maksymalna ilość aktywnych wniosków o certyfikat.",
+            "format": "int32"
           }
         }
       },
@@ -19906,6 +19912,9 @@
             ]
           },
           "enrollment": {
+            "required": [
+              "maxEnrollments"
+            ],
             "allOf": [
               {
                 "$ref": "#/components/schemas/EnrollmentSubjectLimitsOverride"
@@ -19914,6 +19923,9 @@
             "nullable": true
           },
           "certificate": {
+            "required": [
+              "maxCertificates"
+            ],
             "allOf": [
               {
                 "$ref": "#/components/schemas/CertificateSubjectLimitsOverride"
