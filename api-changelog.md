@@ -7,12 +7,26 @@
 | **DEMO**   |     - |
 | **PROD**   |     - |
 
+- **Tokeny KSeF**
+  - Dodano nowe rewizje operacji:
+    - **Wygenerowanie nowego tokena (POST `/tokens/rev2`)** z możliwością określenia okresu ważności,
+    - **Pobranie listy wygenerowanych tokenów (GET `/tokens/rev2`)**,
+    - **Pobranie statusu tokena (GET `/tokens/rev2/{referenceNumber}`)**.
+  - Dotychczasowe operacje generowania tokena, pobierania listy i statusu oznaczono jako przestarzałe. Zostaną wycofane **30.09.2027 r.**
+  - Dodano **zatwierdzenie tokena (POST `/tokens/{referenceNumber}/approve`)**.
+  - Dodano testową operację POST `/testdata/tokens/{referenceNumber}/expire-approval`, symulującą upływ terminu zatwierdzenia tokena przez zmianę statusu z `AwaitingApproval` na `ApprovalExpired`. Operacja jest dostępna wyłącznie na środowiskach testowych.
+  - Unieważnienie tokena (DELETE `/tokens/{referenceNumber}`): 
+    - uzupełniono OpenAPI o istniejący kod błędu `21409` (token o podanym identyfikatorze nie istnieje),
+    - dodano nowy kod `26004` (status tokena nie pozwala na jego odwołanie).
+  - Dodano limit liczby tokenów KSeF rev2 w odpowiedzi operacji pobierania limitów dla bieżącego kontekstu.
+
 - **Uwierzytelnianie**
   - Zmieniono sposób realizacji zapowiedzianego w wersji 2.1.0 wycofania właściwości `authenticationMethod`. Właściwość pozostanie dostępna w dotychczasowych endpointach, natomiast nowe rewizje operacji nie będą jej zawierać:
     - **Pobranie statusu uwierzytelniania (GET `/auth/rev2/{referenceNumber}`)**,
     - **Pobranie listy aktywnych sesji (GET `/auth/sessions/rev2`)**.
   - W nowych rewizjach informacje o metodzie uwierzytelniania są udostępniane we właściwości `authenticationMethodInfo`.
   - Dotychczasowe endpointy GET `/auth/{referenceNumber}` oraz GET `/auth/sessions` pozostaną dostępne i wspierane do **15 czerwca 2027 r.** Zapowiedziane wcześniej usunięcie właściwości `authenticationMethod` w dniu 16 listopada 2026 r. nie nastąpi. Przed zakończeniem okresu wsparcia należy dostosować integracje do nowych rewizji operacji.
+  - Pobranie statusu uwierzytelniania: dodano kod statusu `450` dla próby uwierzytelnienia tokenem KSeF rev2 poza okresem ważności, ze szczegółem "Token poza okresem ważności".
 
 - **OpenAPI**
   - Dodano do odpowiedzi wycofywanych endpointów nagłówki `Deprecation` i `Sunset`, wskazujące odpowiednio moment oznaczenia operacji jako przestarzałej oraz moment jej wyłączenia. Po wyłączeniu operacja będzie zwracać `410 Gone`.

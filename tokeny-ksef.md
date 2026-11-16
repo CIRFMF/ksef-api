@@ -10,7 +10,7 @@ Token KSeF to unikalny, generowany identyfikator uwierzytelniający, który — 
 
 ### Wymagania wstępne
 
-Wygenerowanie ```tokena KSeF``` jest możliwe wyłącznie po jednorazowym uwierzytelnieniu się [podpisem elektronicznym (XAdES)](uwierzytelnianie.md#21-uwierzytelnianie-kwalifikowanym-podpisem-elektronicznym).
+Pierwsze wygenerowanie ```tokena KSeF``` jest możliwe wyłącznie po jednorazowym uwierzytelnieniu się [podpisem elektronicznym (XAdES)](uwierzytelnianie.md#21-uwierzytelnianie-kwalifikowanym-podpisem-elektronicznym).
 
 ### 1. Generowanie tokenu  
 
