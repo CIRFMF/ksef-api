@@ -34,6 +34,9 @@
   - nadawania uprawnień reprezentanta podmiotu unijnego (POST `/permissions/eu-entities/grants`),
   - wyszukiwania nadanych uprawnień (POST `/permissions/query/eu-entities/grants`). 
 
+- **Identyfikatory zbiorcze**  
+  Poprawiono walidację numeru KSeF w GET `/collective-identifiers/ksef/{ksefNumber}`. Nieprawidłowa suma kontrolna powoduje zwrócenie `400 Bad Request` z kodem `21405` („Błąd walidacji danych wejściowych”).
+
 - **OpenAPI**
   - Dodano do odpowiedzi wycofywanych endpointów nagłówki `Deprecation` i `Sunset`, wskazujące odpowiednio moment oznaczenia operacji jako przestarzałej oraz moment jej wyłączenia. Po wyłączeniu operacja będzie zwracać `410 Gone`.
   - Poprawiono przykłady odpowiedzi GET `/auth/{referenceNumber}`: błędy certyfikatów mają kod `460` zamiast `400`.
