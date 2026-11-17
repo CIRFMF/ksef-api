@@ -40,7 +40,8 @@
   - Drobne aktualizacje opisów i przykładów.
 
 - **Dane testowe**  
-  W żądaniu POST `/testdata/limits/subject/certificate` oznaczono właściwość `enrollment.maxEnrollments` i `certificate.maxCertificates` jako wymagane.
+  - W żądaniu POST `/testdata/limits/subject/certificate` oznaczono właściwość `enrollment.maxEnrollments` i `certificate.maxCertificates` jako wymagane.
+  - Naprawiono cofanie zgody na wystawianie faktur z załącznikiem przez POST `/testdata/attachment/revoke` bez podania `expectedEndDate`. W tym przypadku GET `/permissions/attachments/status` prawidłowo zwraca `isAttachmentAllowed: false`.
 
 ### Wersja 2.9.0
 | Środowisko | Data wdrożenia |
