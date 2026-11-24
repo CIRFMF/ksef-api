@@ -124,7 +124,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -299,7 +299,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -395,7 +395,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -496,7 +496,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -593,7 +593,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -698,7 +698,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -824,7 +824,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -957,7 +957,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -1087,7 +1087,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -1205,7 +1205,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -1365,7 +1365,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -1491,7 +1491,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -1613,7 +1613,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | - |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -1700,7 +1700,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | - |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -1782,7 +1782,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | - |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -1872,7 +1872,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | - |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -1954,7 +1954,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | - |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -2051,7 +2051,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | - |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -2141,7 +2141,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | - |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -2223,7 +2223,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | - |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -2305,7 +2305,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | - |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -2381,7 +2381,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -2459,7 +2459,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -2570,7 +2570,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 20 | 120 | 240 | collectiveIdentifier\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 20 | 120 | 240 | collectiveIdentifier |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -2728,7 +2728,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 20 | 120 | 240 | collectiveIdentifier\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 20 | 120 | 240 | collectiveIdentifier |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -2900,7 +2900,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 20 | 120 | 240 | collectiveIdentifier\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 20 | 120 | 240 | collectiveIdentifier |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -3047,7 +3047,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 20 | 120 | 240 | collectiveIdentifier\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 20 | 120 | 240 | collectiveIdentifier |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -3177,7 +3177,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -3282,7 +3282,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -3466,7 +3466,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -3574,7 +3574,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -3662,7 +3662,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -3765,7 +3765,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -3853,7 +3853,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -3959,7 +3959,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -4047,7 +4047,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -4137,7 +4137,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -4276,7 +4276,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -4418,7 +4418,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -4551,7 +4551,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -4695,7 +4695,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -4836,7 +4836,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -4987,7 +4987,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -5131,7 +5131,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -5245,7 +5245,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -5361,7 +5361,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -5496,7 +5496,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -5593,7 +5593,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -5711,7 +5711,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 8 | 16 | 64 | invoiceDownload\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 8 | 16 | 64 | invoiceDownload |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -5975,7 +5975,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 8 | 16 | 20 | invoiceMetadata\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 8 | 16 | 20 | invoiceMetadata |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -6126,7 +6126,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 8 | 16 | 20 | invoiceExport\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 8 | 16 | 20 | invoiceExport |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -6293,7 +6293,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 60 | 600 | invoiceExportStatus\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 60 | 600 | invoiceExportStatus |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -6542,7 +6542,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 5 | 10 | 60 | sessionList\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 5 | 10 | 60 | sessionList |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -6681,7 +6681,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 120 | 1200 | sessionMisc\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 120 | 1200 | sessionMisc |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -6853,7 +6853,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 20 | 200 | sessionInvoiceList\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 20 | 200 | sessionInvoiceList |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -6992,7 +6992,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 30 | 120 | 1200 | invoiceStatus\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 30 | 120 | 1200 | invoiceStatus |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -7149,7 +7149,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 20 | 200 | sessionInvoiceList\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 20 | 200 | sessionInvoiceList |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -7278,7 +7278,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 120 | 1200 | sessionMisc\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 120 | 1200 | sessionMisc |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -7407,7 +7407,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 120 | 1200 | sessionMisc\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 120 | 1200 | sessionMisc |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -7536,7 +7536,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 120 | 1200 | sessionMisc\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 120 | 1200 | sessionMisc |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -7693,7 +7693,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -7926,7 +7926,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -8084,7 +8084,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -8305,7 +8305,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -8465,7 +8465,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -8589,7 +8589,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -8737,7 +8737,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -8838,7 +8838,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -8939,7 +8939,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -9071,7 +9071,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | - |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -9157,7 +9157,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | - |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -9255,7 +9255,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | - |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -9359,7 +9359,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | - |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -9595,7 +9595,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | - |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -9886,7 +9886,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | - |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -9991,7 +9991,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | - |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -10092,7 +10092,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | -\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 60 | - | - | - |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -10220,7 +10220,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | onlineSession\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | onlineSession |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -10365,7 +10365,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 180 | invoiceSend\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 180 | invoiceSend |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -10471,7 +10471,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 20 | 60 | 240 | onlineSessionClose\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 20 | 60 | 240 | onlineSessionClose |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -10628,7 +10628,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 20 | 60 | batchSession\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 20 | 60 | batchSession |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -10733,7 +10733,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 20 | 40 | 120 | batchSessionClose\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 20 | 40 | 120 | batchSessionClose |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -10903,7 +10903,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -11089,7 +11089,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -11268,7 +11268,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -11440,7 +11440,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -11586,7 +11586,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -11755,7 +11755,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -11943,7 +11943,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
@@ -12118,7 +12118,7 @@
             "x-summary": "Bad Request"
           },
           "429": {
-            "description": "| | req / s | req / min | req / h | grupa\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other\n",
+            "description": "| | req / s | req / min | req / h | grupa |\n| --- | --- | --- | --- | --- |\n| **Limity liczby żądań** | 10 | 30 | 120 | other |\n",
             "headers": {
               "Retry-After": {
                 "schema": {
