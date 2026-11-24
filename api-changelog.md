@@ -1,5 +1,8 @@
 ## Zmiany w API 2.0
 
+- **OpenAPI**   
+  Uzupełniono definicję `collectiveIdentifierNumbers` w żądaniu POST `/collective-identifiers/invoices` o `minItems`: 1 i `maxItems`: 10, zgodnie z dotychczasowym opisem i działaniem operacji.
+
 ### Wersja 2.10.0
 | Środowisko | Data wdrożenia |
 | ---------- | -------------: |
