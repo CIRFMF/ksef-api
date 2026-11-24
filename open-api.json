@@ -9435,7 +9435,7 @@
                 "examples": {
                   "Kod 100 | Uwierzytelnianie w toku": {
                     "value": {
-                      "startDate": "0001-01-01T00:00:00+00:00",
+                      "startDate": "2025-05-14T13:23:39+00:00",
                       "authenticationMethod": "Token",
                       "status": {
                         "code": 100,
@@ -9445,7 +9445,7 @@
                   },
                   "Kod 200 | Uwierzytelnianie zakończone sukcesem": {
                     "value": {
-                      "startDate": "0001-01-01T00:00:00+00:00",
+                      "startDate": "2025-05-14T13:23:39+00:00",
                       "authenticationMethod": "Token",
                       "status": {
                         "code": 200,
@@ -9455,7 +9455,7 @@
                   },
                   "Kod 460 | Uwierzytelnianie zakończone niepowodzeniem | Nieważny certyfikat": {
                     "value": {
-                      "startDate": "0001-01-01T00:00:00+00:00",
+                      "startDate": "2025-05-14T13:23:39+00:00",
                       "authenticationMethod": "Token",
                       "status": {
                         "code": 460,
@@ -9468,7 +9468,7 @@
                   },
                   "Kod 460 | Uwierzytelnianie zakończone niepowodzeniem | Błąd weryfikacji łańcucha certyfikatów": {
                     "value": {
-                      "startDate": "0001-01-01T00:00:00+00:00",
+                      "startDate": "2025-05-14T13:23:39+00:00",
                       "authenticationMethod": "Token",
                       "status": {
                         "code": 460,
@@ -9481,7 +9481,7 @@
                   },
                   "Kod 460 | Uwierzytelnianie zakończone niepowodzeniem | Niezaufany łańcuch certyfikatów": {
                     "value": {
-                      "startDate": "0001-01-01T00:00:00+00:00",
+                      "startDate": "2025-05-14T13:23:39+00:00",
                       "authenticationMethod": "Token",
                       "status": {
                         "code": 460,
@@ -9494,7 +9494,7 @@
                   },
                   "Kod 460 | Uwierzytelnianie zakończone niepowodzeniem | Certyfikat odwołany": {
                     "value": {
-                      "startDate": "0001-01-01T00:00:00+00:00",
+                      "startDate": "2025-05-14T13:23:39+00:00",
                       "authenticationMethod": "Token",
                       "status": {
                         "code": 460,
@@ -9507,7 +9507,7 @@
                   },
                   "Kod 460 | Uwierzytelnianie zakończone niepowodzeniem | Niepoprawny certyfikat": {
                     "value": {
-                      "startDate": "0001-01-01T00:00:00+00:00",
+                      "startDate": "2025-05-14T13:23:39+00:00",
                       "authenticationMethod": "Token",
                       "status": {
                         "code": 460,
@@ -9520,7 +9520,7 @@
                   },
                   "Kod 500 | Nieznany błąd": {
                     "value": {
-                      "startDate": "0001-01-01T00:00:00+00:00",
+                      "startDate": "2025-05-14T13:23:39+00:00",
                       "authenticationMethod": "Token",
                       "status": {
                         "code": 500,
