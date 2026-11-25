@@ -5679,10 +5679,22 @@
                   "$ref": "#/components/schemas/SystemWarning"
                 }
               },
+              "x-ms-meta-acquisition-date": {
+                "description": "Data nadania numeru KSeF",
+                "schema": {
+                  "type": "string"
+                }
+              },
               "x-ms-meta-hash": {
                 "description": "Skrót SHA-256 faktury, zakodowany w formacie Base64",
                 "schema": {
                   "$ref": "#/components/schemas/Sha256HashBase64"
+                }
+              },
+              "x-ms-meta-permanent-storage-date": {
+                "description": "Data trwałego zapisu faktury w repozytorium systemu KSeF",
+                "schema": {
+                  "type": "string"
                 }
               }
             },

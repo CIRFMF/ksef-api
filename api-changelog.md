@@ -1,5 +1,9 @@
 ## Zmiany w API 2.0
 
+### Wersja 2.10.1
+- **Pobranie faktury po numerze KSeF (GET `/invoices/ksef/{ksefNumber}`)**  
+  Dodano nagłówki odpowiedzi `acquisitionDate` (data nadania numeru KSeF) i `permanentStorageDate` (data trwałego zapisu faktury), umożliwiające pobranie tych informacji bez dodatkowego zapytania o metadane.
+
 - **OpenAPI**   
   Uzupełniono definicję `collectiveIdentifierNumbers` w żądaniu POST `/collective-identifiers/invoices` o `minItems`: 1 i `maxItems`: 10, zgodnie z dotychczasowym opisem i działaniem operacji.
 
