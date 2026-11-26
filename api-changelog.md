@@ -1,11 +1,14 @@
 ## Zmiany w API 2.0
 
 ### Wersja 2.10.1
-| Środowisko | Data wdrożenia |
-| ---------- | -------------: |
-| **TEST**   |     25.11.2026 |
-| **DEMO**   |     26.11.2026 |
-| **PROD**   |     01.12.2026 |
+
+| Środowisko | Data wdrożenia | Dostępność endpointów tokenów `rev2` |
+| ---------- | -------------: | -----------------------------------: |
+| **TEST** | 25.11.2026 | 25.11.2026 |
+| **DEMO** | 26.11.2026 | 30.12.2026 |
+| **PROD** | 01.12.2026 | 01.01.2027 |
+
+Ze względu na obowiązujące rozporządzenie nowe endpointy tokenów `rev2` zostaną udostępnione na środowiskach DEMO i PROD w późniejszych terminach niż pozostałe funkcjonalności wersji 2.10.1.
 
 - **Pobranie faktury po numerze KSeF (GET `/invoices/ksef/{ksefNumber}`)**  
   Dodano nagłówki odpowiedzi `acquisitionDate` (data nadania numeru KSeF) i `permanentStorageDate` (data trwałego zapisu faktury), umożliwiające pobranie tych informacji bez dodatkowego zapytania o metadane.
